@@ -1,5 +1,5 @@
 <footer class="bg-dark">
-        <section class="mt-5">
+        <section class="pt-3">
             <div class="container-fluid me-0">
                
                 <div class="row p-3 mx-auto">
@@ -15,6 +15,7 @@
                     <i class="fa-brands fa-instagram me-2"></i>
                     <i class="fa-brands fa-twitter me-2"></i>
                     <i class="fa-brands fa-tiktok me-2"></i>
+                    <i class="fa-brands fa-youtube me-2"></i>
                 </p>
                     </div>
                     
@@ -22,7 +23,7 @@
 
                 <div class="col-md-2 me-2 text-center">
                 <h4 class="text-light me-4 text-center">Links</h4>
-                    <ul class="list-unstyled ">
+                    <ul class="list-unstyled">
                         
                         <li class="nav-item mb-2">
                         <a class="nav-link active text-light" aria-current="page" href="#">Active</a>
@@ -71,13 +72,13 @@
                     <div class="row justify-content-between">
                         <div class="col-md-5">
                         <p class="text-light">
-                        <a href="#" class="text-light">Terms of Use</a>  &#x2223;
-                        <a href="#" class="text-light">Privacy Policy</a>
+                        <a href="#" class="text-light text-decoration-none">Terms of Use</a>  &#x2223;
+                        <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
                         </p>
                         </div>
                         
                         <div class="col-md-5">
-                        <p class="text-light text-end">&copy;2021 <a href="#" class="text-light">Global Wild Swimming and Camping</a>, All Rights Reversed</p>    
+                        <p class="text-light text-end">&copy;2021 <a href="#" class="text-light text-decoration-none">Global Wild Swimming and Camping</a>, All Rights Reversed</p>    
                         </div>
                         
                        

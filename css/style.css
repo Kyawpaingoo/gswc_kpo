@@ -260,5 +260,17 @@ section.header {
   background-size: cover;
   background-position: center;
   color: white;
-  height: 18rem;
+  height: 12rem;
+}
+
+.figure-img {
+  max-width: 200px;
+}
+
+section.contact_header {
+  background-image: url("../images/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 12rem;
 }
