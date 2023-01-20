@@ -58,7 +58,7 @@
                         </p></div>
 
                         <div class="col-md-4">
-                        <a href="#" class="text-decoration-none text-dark text-end" target="_blank" rel="noopener noreferrer">
+                        <a href="#" class="text-decoration-none text-dark text-end hvr-grow" target="_blank" rel="noopener noreferrer">
                         Send Message <i class="fa-solid fa-arrow-right"></i>
                         </a> 
                         </div>

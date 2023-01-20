@@ -274,3 +274,41 @@ section.contact_header {
   color: white;
   height: 12rem;
 }
+
+section.review_header {
+  /* background-image: url("../images/contact.jpg");
+  background-size: cover;
+  background-position: center; */
+  color: white;
+  height: 12rem;
+}
+
+section.feature-header {
+  color: white;
+  height: 12rem;
+}
+
+section.pitchtype_header {
+  color: white;
+  height: 12rem;
+}
+
+section.local_header {
+  background-image: url("../images/ali-kazal-Vp5tsFIEwyQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 30rem;
+  padding-top: 10rem;
+}
+
+section.local_header h1,
+p {
+  padding: 5px;
+}
+
+section.local_header a.btn {
+  border: 2px solid;
+  padding: 10px 25px;
+  font-weight: bold;
+}

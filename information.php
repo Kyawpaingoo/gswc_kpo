@@ -44,6 +44,7 @@
         <div class="container ms-auto me-auto">
             <div class="row">
             <h2 class="text-center">Service</h2>
+            </div>
             <div class="row mt-4">
                 <div class="col-md-4"><h5><img src="images/parking.svg" width="50px" height="50px" alt="">   Parking in the camp</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
@@ -71,7 +72,7 @@
             </div>
             
                         
-            </div>
+            
             <hr class="divider mt-5">
         </div>
     </section>
@@ -127,7 +128,7 @@
 
     <section class="my-4">
         <div class="container">
-            <div class="row my-2">
+            <div class="row my-4">
                 <div class="col-md-4">
                     <img src="images/gallerry1.jpg" class="img-fluid rounded" alt="">
                 </div>
@@ -139,8 +140,8 @@
                 </div>
             </div>
 
-            <div class="row my-2">
-                <div class="col-md-4">
+            <div class="row my-4">
+                <div class="col-md-4 ">
                     <img src="images/gallery4.jpg" class="img-fluid rounded" alt="">
                 </div>
                 <div class="col-md-4">
@@ -215,8 +216,9 @@
                 </div>
             </div>
             <div class="row mb-4">
-                <p class="text-end">Click here to view more local attractions
-                    <a href="" class="btn btn-success"><i class="fa-solid fa-arrow-right"></i></a></p>     
+               
+                    <a href="" class="text-dark text-end text-decoration-none hvr-forward">Click here to view more local attractions 
+                    <i class="fa-solid fa-arrow-right"></i></a>    
             </div>
         </div>
     </section>

@@ -1,6 +1,7 @@
 <?php
     require_once('header.php');
-?>
+?>  
+    <!-- //carousel -->
     <Section>
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
@@ -54,6 +55,7 @@
     </div>
     </Section>
 
+    <!-- //welcome -->
     <section class="Welcome py-4">
         <div class="container">
             <h1 class="text-center">Welcome to Global Wild Swimming <br> and Camping</h1>
