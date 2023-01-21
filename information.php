@@ -1,5 +1,21 @@
 <?php
     require_once('header.php');
+    require_once('db/dbconfig.php');
+    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC");
+    $pdo_statement->execute();
+    $result = $pdo_statement->fetchAll();
+
+    $info_figure = $pdo_conn->prepare("SELECT * FROM information_figure  ORDER BY  information_figure.id ASC");
+    $info_figure->execute();
+    $info_figure_result =  $info_figure->fetchAll();
+
+    $info_gallery = $pdo_conn->prepare("SELECT * FROM info_gallery  ORDER BY  info_gallery.id ASC");
+    $info_gallery->execute();
+    $info_gallery_result =  $info_gallery->fetchAll();
+
+    $info_local= $pdo_conn->prepare("SELECT * FROM info_local  ORDER BY  info_local.id ASC");
+    $info_local->execute();
+    $info_local_result =  $info_local->fetchAll();
 ?>
     <section class="header">
         <div class="container-fluid">
@@ -42,35 +58,29 @@
 
     <section>
         <div class="container ms-auto me-auto">
-            <div class="row">
-            <h2 class="text-center">Service</h2>
+        <div class="row my-2">
+                <h2 class="text-center">Service</h2>
             </div>
             <div class="row mt-4">
-                <div class="col-md-4"><h5><img src="images/parking.svg" width="50px" height="50px" alt="">   Parking in the camp</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-                <div class="col-md-4"><h5><img src="images/caravan.svg" width="50px" height="50px" alt="">   Motorhome</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-                <div class="col-md-4"><h5><img src="images/washing-machine.svg" width="50px" height="50px" alt="">   Washing Machines</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-            </div>    
+                <?php
+                if(!empty($result)){
+                    foreach($result as $row){
 
-            <div class="row mt-4">
-                <div class="col-md-4"><h5><img src="images/shower.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
+                   
+                ?>
+                <div class="col-md-4"><h5><img src="images/<?php echo $row['image']; ?>" width="50px" height="50px" alt="">   <?php echo $row['title']; ?></h5>
+                <p>
+                    <?php
+                    echo $row['description'];
+                    ?>
+                </p>
                 </div>
-
-                <div class="col-md-4"><h5><img src="images/wifi.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-
-                <div class="col-md-4"><h5><img src="images/electric-_1_.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-            </div>
-            
+                
+                <?php
+                 }
+                }
+                ?>
+            </div>  
                         
             
             <hr class="divider mt-5">
@@ -104,24 +114,24 @@
     <section class="my-4">
         <div class="container">
             <div class="row py-4">
+                <?php
+                if(!empty($info_figure)){
+                    foreach($info_figure_result as $row){
+
+                ?>
                 <div class="col-md-4">
                     <figure class="figure">
-                    <img src="images/motorhome.jpg" class="figure-img img-fluid rounded h-50" alt="...">
-                    <figcaption class="figure-caption text-align">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore totam pariatur, iure ducimus accusamus possimus deserunt blanditiis fugiat ratione minima tempora temporibus natus eum eos asperiores exercitationem ex vel repellendus.</figcaption>
+                    <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded h-50" alt="...">
+                    <figcaption class="figure-caption text-align">
+                    <?php echo $row['description']; ?>
+                    </figcaption>
                     </figure>
                 </div>
-                <div class="col-md-4">
-                    <figure class="figure">
-                    <img src="images/pitch2.jpg" class="figure-img img-fluid rounded h-50" alt="...">
-                    <figcaption class="figure-caption text-align">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore totam pariatur, iure ducimus accusamus possimus deserunt blanditiis fugiat ratione minima tempora temporibus natus eum eos asperiores exercitationem ex vel repellendus.</figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4">
-                    <figure class="figure">
-                    <img src="images/campfire.jpg" class="figure-img img-fluid rounded h-50" alt="...">
-                    <figcaption class="figure-caption text-align">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore totam pariatur, iure ducimus accusamus possimus deserunt blanditiis fugiat ratione minima tempora temporibus natus eum eos asperiores exercitationem ex vel repellendus.</figcaption>
-                    </figure>
-                </div>
+                <?php
+
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -129,28 +139,18 @@
     <section class="my-4">
         <div class="container">
             <div class="row my-4">
-                <div class="col-md-4">
-                    <img src="images/gallerry1.jpg" class="img-fluid rounded" alt="">
-                </div>
-                <div class="col-md-4">
-                <img src="images/pitch2.jpg" class="img-fluid rounded " alt="" height="250px">
-                </div>
-                <div class="col-md-4">
-                <img src="images/gallery3.jpg" class="img-fluid rounded" alt="">
-                </div>
-            </div>
+            <?php
+                if(!empty($info_gallery)){
+                    foreach($info_gallery_result as $row){
 
-            <div class="row my-4">
-                <div class="col-md-4 ">
-                    <img src="images/gallery4.jpg" class="img-fluid rounded" alt="">
+                ?>
+                <div class="col-md-4 my-2">
+                    <img src="images/<?php echo $row['image']; ?>" class="img-fluid rounded" alt="">
                 </div>
-                <div class="col-md-4">
-                <img src="images/gallery5.jpg" class="img-fluid rounded " alt="">
-                </div>
-                <div class="col-md-4">
-                <img src="images/gallery6.jpg" class="img-fluid rounded" alt="">
-                </div>
-            </div>
+                <?php
+                        }   
+                    }
+                ?>
         </div>
     </section>
 
@@ -196,28 +196,28 @@
                 <h2 class="text-center">Local Attractions</h2>
             </div>
             <div class="row mt-4 mb-2">
+                <?php 
+                    if(!empty($info_local)){
+                        foreach($info_local_result as $row){       
+                ?>
                 <div class="col-md-4">
                 <figure class="figure">
-                <img src="images/attraction2.jpg" class="figure-img img-fluid rounded h-50 my-3"  alt="...">
-                <figcaption class="figure-caption lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui repudiandae a, vitae quaerat recusandae voluptatem eaque in omnis hic unde, optio porro autem culpa modi. Libero laborum consequatur aliquam odio!</figcaption>
+                <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded h-50 my-3"  alt="...">
+                <figcaption class="figure-caption lh-lg">
+                    <?php
+                    echo $row['description'];
+                    ?>
+                </figcaption>
                 </figure>
                 </div>
-                <div class="col-md-4">
-                <figure class="figure">
-                <img src="images/attraction2.jpg" class="figure-img img-fluid rounded h-50 my-3"  alt="...">
-                <figcaption class="figure-caption lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui repudiandae a, vitae quaerat recusandae voluptatem eaque in omnis hic unde, optio porro autem culpa modi. Libero laborum consequatur aliquam odio!</figcaption>
-                </figure>
-                </div>
-                <div class="col-md-4">
-                <figure class="figure">
-                <img src="images/attraction2.jpg" class="figure-img img-fluid rounded h-50 my-3"  alt="...">
-                <figcaption class="figure-caption lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui repudiandae a, vitae quaerat recusandae voluptatem eaque in omnis hic unde, optio porro autem culpa modi. Libero laborum consequatur aliquam odio!</figcaption>
-                </figure>
-                </div>
+                <?php
+                      }
+                    }
+                ?>
             </div>
             <div class="row mb-4">
                
-                    <a href="" class="text-dark text-end text-decoration-none hvr-forward">Click here to view more local attractions 
+                    <a href="local_attraction.php" class="text-dark text-end text-decoration-none hvr-forward">Click here to view more local attractions 
                     <i class="fa-solid fa-arrow-right"></i></a>    
             </div>
         </div>

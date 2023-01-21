@@ -62,10 +62,10 @@
                     <p>
                     Sign up for our newsletter and get updated about our latest promotions
                     </p>
-                    <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                    </div>
+                    <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="email" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
                 </div>
                 </div>
                     <hr class="divider text-light">
