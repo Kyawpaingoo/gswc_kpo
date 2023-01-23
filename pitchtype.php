@@ -7,37 +7,48 @@
         Pitch Type and Availability
         </h1>    
     </section>
-    <div class="container check">
-        <form action="" method="get">
-            <div class="row-md-12 lg-4 justify-content-center">
-                <div class="col-md-8">
-                    <div class="row">
-                    <div class="col-md-3">
-                        <Label><i class="fa-solid fa-calendar-days"></i> Check In</Label>
-                        <input type="datetime" name="" id="">
-                    </div>
-                    <div class="col-md-3">
-                        <Label><i class="fa-solid fa-calendar-days"></i> Check Out</Label>
-                        <input type="datetime" name="" id="">
-                    </div>
-                    <div class="col-md-3">
-                        <Label><i class="fa-solid fa-user"></i> Guest</Label>
-                        <input type="datetime" name="" id="">
-                    </div>
-                    <div class="col-md-3">
-                        <Label><i class="fa-solid fa-tent"></i> Accommodation</Label>
-                        <input type="datetime" name="" id="">
-                    </div>
-                    </div>
-                    
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-outline-success">Check Availabity</button>
-                </div>
-            </div>
+    <div class="container">
+       
             
-        </form>
-    </div>
+       <form action="" method="get" class="row g-3">
+              
+           <div class="col-md-6">
+               <label for="inputEmail4" class="form-label">Check In</label>
+               <input type="datetime" name="checkin" class="form-control" id="inputEmail4">
+           </div>
+
+           <div class="col-md-6">
+               <label for="inputPassword4" class="form-label">Check out</label>
+               <input type="datetime" name="checkout" class="form-control" id="inputPassword4">
+           </div>
+
+           <div class="col-md-6">
+               <label for="inputAddress" class="form-label">Guest</label>
+               <input type="text" class="form-control" id="inputAddress">
+           </div>
+
+           <div class="col-md-6">
+           <label for="inputState" class="form-label">State</label>
+           <select id="inputState" class="form-select">
+           <option selected>Classic</option>
+           <option>...</option>
+           </div>
+
+           <div class="col-md-12">
+               <div class="form-check">
+               <input class="form-check-input" type="checkbox" id="gridCheck">
+               <label class="form-check-label" for="gridCheck">
+                   Check me out
+               </label>
+               </div>
+           </div>
+
+           <div class="col-md-12">
+               <a href="#" class="btn btn-outline-success">Check Availability</a>
+           </div>
+           
+       </form>
+</div>
 
     <section>
         <div class="container my-3">

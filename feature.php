@@ -1,5 +1,13 @@
 <?php 
     require_once('header.php');
+    require_once('db/dbconfig.php');
+    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC");
+    $pdo_statement->execute();
+    $result = $pdo_statement->fetchAll();
+
+    $campsite = $pdo_conn->prepare("SELECT campsite. * FROM campsite ORDER BY  campsite.id ASC");
+    $campsite->execute();
+    $campsite_result = $campsite->fetchAll();
 ?>
     <section class="feature-header bg-secondary">
                     <h1 class="text-center py-5">Our Features</h1>
@@ -24,30 +32,26 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-md-4"><h5><img src="images/parking.svg" width="50px" height="50px" alt="">   Parking in the camp</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-                <div class="col-md-4"><h5><img src="images/caravan.svg" width="50px" height="50px" alt="">   Motorhome</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-                <div class="col-md-4"><h5><img src="images/washing-machine.svg" width="50px" height="50px" alt="">   Washing Machines</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-            </div>    
-
             <div class="row mt-4">
-                <div class="col-md-4"><h5><img src="images/shower.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
+                <?php
+                if(!empty($result)){
+                    foreach($result as $row){
 
-                <div class="col-md-4"><h5><img src="images/wifi.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
+                   
+                ?>
+                <div class="col-md-4"><h5><img src="images/<?php echo $row['image']; ?>" width="50px" height="50px" alt="">   <?php echo $row['title']; ?></h5>
+                <p>
+                    <?php
+                    echo $row['description'];
+                    ?>
+                </p>
                 </div>
-
-                <div class="col-md-4"><h5><img src="images/electric-_1_.svg" width="50px" height="50px" alt="">   Sanitary Facilities</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci modi natus totam placeat exercitationem tenetur voluptatum.</p>
-                </div>
-            </div>
+                
+                <?php
+                 }
+                }
+                ?>
+            </div>  
             
         </div>
     </section>
@@ -59,14 +63,22 @@
                     <h2 class="text-center">Our Campsites</h2>
                 </div>
             </div>
+            <?php 
+                if(!empty($campsite_result)){
+                    foreach($campsite_result as $row){
+
+            ?>
             <div class="row py-3">
                 <div class="col-md-6">
-                    <img src="images/brian-yurasits-cAVUdHxLgIw-unsplash.jpg" class="img-fluid w-100" alt="">
+                    <img src="images/<?php echo $row['image']; ?>" class="img-fluid w-100" alt="">
                 </div>
-                <div class="col-md-6 pt-5 lh-lg">
-                    <h4 class="fw-bold">Campsite A</h4>
-                    <figcaption>Zone A <div class="vr"></div> 1-6 Person <div class="vr"></div> 15m2s </figcaption>
-                    <p class="lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque consectetur in recusandae nemo eligendi labore optio, rerum error obcaecati, facere ex reiciendis fuga aperiam cupiditate amet illo nulla vel nostrum.</p>
+                <div class="col-md-6 pt-3 lh-lg">
+                    <h4 class="fw-bold"><?php echo $row['title']; ?></h4>
+                    <figcaption><?php echo $row['short_desc']; ?> <div class="vr"></div> <?php echo $row['short_desc2']; ?> Person <div class="vr">
+                    </figcaption>
+                    <p class="lh-lg">
+                    <?php echo substr($row['long_desc'],0,200); ?>
+                    </p>
                     <p class="font-monospace">
                     <img src="images/parking.svg"  width="35px" height="35px" alt="">
                     <img src="images/caravan.svg" width="35px" height="35px" alt="">
@@ -80,51 +92,10 @@
                     <i class="fa-solid fa-arrow-right"></i></a>   
                 </div>
             </div>
-
-            <div class="row py-3">
-                <div class="col-md-6">
-                    <img src="images/brian-yurasits-cAVUdHxLgIw-unsplash.jpg" class="img-fluid w-100" alt="">
-                </div>
-                <div class="col-md-6 pt-5 lh-lg">
-                    <h4 class="fw-bold">Campsite A</h4>
-                    <figcaption>Zone A <div class="vr"></div> 1-6 Person <div class="vr"></div> 15m2s </figcaption>
-                    <p class="lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque consectetur in recusandae nemo eligendi labore optio, rerum error obcaecati, facere ex reiciendis fuga aperiam cupiditate amet illo nulla vel nostrum.</p>
-                    <p class="font-monospace">
-                    <img src="images/parking.svg"  width="35px" height="35px" alt="">
-                    <img src="images/caravan.svg" width="35px" height="35px" alt="">
-                    <img src="images/washing-machine.svg" width="35px" height="35px" alt="">
-                    <img src="images/shower.svg" width="35px" height="35px" alt="">
-                    <img src="images/wifi.svg" width="35px" height="35px" alt="">
-                    <img src="images/electric-_1_.svg" width="35px" height="35px" alt="">
-                    </p>
-                    <hr class="divider w-75">  
-                    <a href="" class="text-dark text-end text-decoration-none hvr-forward">Click here to view more local attractions 
-                    <i class="fa-solid fa-arrow-right"></i></a>   
-                </div>
-            </div>
-
-            <div class="row py-3">
-                <div class="col-md-6">
-                    <img src="images/brian-yurasits-cAVUdHxLgIw-unsplash.jpg" class="img-fluid w-100" alt="">
-                </div>
-                <div class="col-md-6 pt-5 lh-lg">
-                    <h4 class="fw-bold">Campsite A</h4>
-                    <figcaption>Zone A <div class="vr"></div> 1-6 Person <div class="vr"></div> 15m2s </figcaption>
-                    <p class="lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque consectetur in recusandae nemo eligendi labore optio, rerum error obcaecati, facere ex reiciendis fuga aperiam cupiditate amet illo nulla vel nostrum.</p>
-                    <p class="font-monospace">
-                    <img src="images/parking.svg"  width="35px" height="35px" alt="">
-                    <img src="images/caravan.svg" width="35px" height="35px" alt="">
-                    <img src="images/washing-machine.svg" width="35px" height="35px" alt="">
-                    <img src="images/shower.svg" width="35px" height="35px" alt="">
-                    <img src="images/wifi.svg" width="35px" height="35px" alt="">
-                    <img src="images/electric-_1_.svg" width="35px" height="35px" alt="">
-                    </p>
-                    <hr class="divider w-75">  
-                    <a href="" class="text-dark text-end text-decoration-none hvr-forward">Click here to view more local attractions 
-                    <i class="fa-solid fa-arrow-right"></i></a>   
-                </div>
-            </div>
-
+            <?php 
+                    }
+                }
+            ?>
         </div>
     </section>
 
@@ -164,10 +135,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">No</th>
+                    <th scope="col">Campsite</th>
+                    <th scope="col">Person</th>
+                    <th scope="col">Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -193,11 +164,7 @@
                     <td colspan="2">Larry the Bird</td>
                     <td>@twitter</td>
                     </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                    
                    </tbody>
                 </table>
                 <div class="row">

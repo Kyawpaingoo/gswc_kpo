@@ -1,5 +1,10 @@
 <?php 
- require_once('header.php');
+    require_once('db/dbconfig.php');
+    require_once('header.php');
+
+    $pdo_statement = $pdo_conn->prepare("SELECT review. * FROM review ORDER BY  review.id ASC");
+    $pdo_statement->execute();
+    $result = $pdo_statement->fetchAll();
 ?>
     <section class="review_header bg-secondary">
         <h1 class="text-center">
@@ -13,47 +18,33 @@
                 <h2>Latest Articles</h2>
             </div>
             <div class="row">
+                <?php
+                    if(!empty($result)){
+                        foreach($result as $row){
+
+                       
+                ?>
                 <div class="col-md-7">
                 <figure class="figure ">
                 <img src="images/jon-tyson-vw36afzkJro-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
                 
-                <figcaption class="figure-caption lh-lg">Post by Kenvin <br>
+                <figcaption class="figure-caption lh-lg">Post by <?php echo $row['name']; ?> <br>
                 May 21, 2022
                 </figcaption>
-                <h3 class="fw-bold py-2 ">Campsite Review</h3>
-                <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste porro totam soluta reprehenderit non eum hic neque, saepe quis magni pariatur ut quo corporis voluptatem tempora officia iure ex itaque?</p>
+                
+                <p class="py-2">
+                    
+                </p>
                 <a href="#" class="text-decoration-none text-dark text-end hvr-grow" target="_blank" rel="noopener noreferrer">
                 Read More <i class="fa-solid fa-arrow-right"></i>
                 </a> 
                 </figure>
-                
-                <figure class="figure ">
-                <img src="images/jon-tyson-vw36afzkJro-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
-                
-                <figcaption class="figure-caption lh-lg">Post by Kenvin <br>
-                May 21, 2022
-                </figcaption>
-                <h3 class="fw-bold py-2 ">Campsite Review</h3>
-                <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste porro totam soluta reprehenderit non eum hic neque, saepe quis magni pariatur ut quo corporis voluptatem tempora officia iure ex itaque? </p>
-                <a href="#" class="text-decoration-none text-dark text-end hvr-grow" target="_blank" rel="noopener noreferrer">
-                Read More <i class="fa-solid fa-arrow-right"></i>
-                </a> 
-                </figure>
-
-                <figure class="figure ">
-                <img src="images/jon-tyson-vw36afzkJro-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
-                
-                <figcaption class="figure-caption lh-lg">Post by Kenvin <br>
-                May 21, 2022
-                </figcaption>
-                <h3 class="fw-bold py-2 ">Campsite Review</h3>
-                <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste porro totam soluta reprehenderit non eum hic neque, saepe quis magni pariatur ut quo corporis voluptatem tempora officia iure ex itaque? </p>
-                <a href="#" class="text-decoration-none text-dark text-end hvr-grow" target="_blank" rel="noopener noreferrer">
-                Read More <i class="fa-solid fa-arrow-right"></i>
-                </a> 
-                </figure>
+ 
                 </div>
-
+                    <?php
+                         }
+                        }
+                    ?>
                 <div class="col-md-5">
                     <h4 class="fw-bold py-3">Popolar Posts</h4>
                     <div class="row my-4">

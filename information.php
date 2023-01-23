@@ -205,7 +205,7 @@
                 <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded h-50 my-3"  alt="...">
                 <figcaption class="figure-caption lh-lg">
                     <?php
-                    echo $row['description'];
+                    echo substr($row['description'],0,200);
                     ?>
                 </figcaption>
                 </figure>
