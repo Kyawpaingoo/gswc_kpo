@@ -1,12 +1,13 @@
-<footer class="bg-dark">
-        <section class="pt-3">
+
+ <footer class="bg-dark">
+ <section class="pt-3">
             <div class="container-fluid me-0">
                
                 <div class="row p-3 mx-auto">
                 <div class="col-md-3 text-light">
                     <div class="row">
                     <h4>This is Global Wild Swimming and Camping.</h4>
-                    <p >Welcome to our camping service site! We offer a variety of camping options for all types of outdoor enthusiasts. </p>
+                    <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, mollitia. </p>
                     </div>
                     
                     <div class="row">
@@ -21,8 +22,8 @@
                     
                 </div>
 
-                <div class="col-md-2 me-2 ">
-                <h4 class="text-light me-4 ">Links</h4>
+                <div class="col-md-2 me-2 text-center">
+                <h4 class="text-light me-4 text-center">Links</h4>
                     <ul class="list-unstyled">
                         
                         <li class="nav-item mb-2">
@@ -53,7 +54,7 @@
                     <h4>Contact</h4>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="fa-solid fa-location-dot"></i> : Via Venti Settembre, Ireland</li>
-                        <li class="mb-2"><i class="fa-solid fa-phone"></i> :  ( 01) 437 0969</li>
+                        <li class="mb-2"><i class="fa-solid fa-phone"></i> : 09-768045970</li>
                         <li class="mb-2"><i class="fa-solid fa-envelope"></i> : paingookyaw624@gamil.com</li>
                     </ul>
                     </div>
@@ -92,8 +93,14 @@
             </div>
         </section>
     </footer>
-    </body>
-    <script src="js/script.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="https://kit.fontawesome.com/a64b1fca43.js" crossorigin="anonymous"></script>
-    </html>
+   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

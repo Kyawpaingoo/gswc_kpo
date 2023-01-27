@@ -1,7 +1,9 @@
+
+
 <?php
     require_once('header.php');
     require_once('db/dbconfig.php');
-    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC");
+    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC ");
     $pdo_statement->execute();
     $result = $pdo_statement->fetchAll();
 
@@ -9,13 +11,13 @@
     $camp->execute();
     $camp_result = $camp->fetchAll();
 
-    $camp_review = $pdo_conn->prepare("SELECT  * FROM index_review ORDER BY  index_review.id ASC");
+    $camp_review = $pdo_conn->prepare("SELECT  * FROM review ORDER BY  review.id ASC LIMIT 3");
     $camp_review->execute();
     $camp_review_result = $camp_review->fetchAll();
 
-    $index_blog = $pdo_conn->prepare("SELECT  * FROM  index_blog  ORDER BY   index_blog .id ASC");
-    $index_blog ->execute();
-    $index_blog_result = $index_blog ->fetchAll();
+   $local_attraction = $pdo_conn->prepare("SELECT  * FROM  local_attraction_main  ORDER BY local_attraction_main .id DESC LIMIT 2");
+   $local_attraction ->execute();
+   $local_attraction_result =$local_attraction ->fetchAll();
 ?>  
     <!-- //carousel -->
     <Section>
@@ -28,27 +30,27 @@
     <div class="card-img-overlay">
     <h3 class="card-title pt-5 ps-5">Nature benefits you</h3>
     <p class="card-text ps-5">Experience everything nature has to offer</p>
-    <a href="" class="btn btn-outline-light" style="margin-left: 10%">View More</a>
+    
   </div>
 </div>
     </div>
     <div class="carousel-item">
     <div class="card text-bg-dark">
-    <img src="images/attraction1.jpg" class="img-fluid" alt="...">
+    <img src="images/couple.jpg" class="img-fluid" alt="...">
     <div class="card-img-overlay">
     <h3 class="card-title pt-5 ps-5">Travel with your soul </h3>
     <p class="card-text ps-5">Experience Earht's enery with your soulmate</p>
-    <a href="" class="btn btn-outline-light" style="margin-left: 10%">View More</a>
+    
   </div>
 </div>
     </div>
     <div class="carousel-item">
     <div class="card text-bg-dark">
-    <img src="images/attraction1.jpg" class="img-fluid" alt="...">
+    <img src="images//adventure.jpg" class="img-fluid" alt="...">
     <div class="card-img-overlay">
     <h3 class="card-title pt-5 ps-5">Choose a heatlhy environment</h3>
     <p class="card-text ps-5">You can travel and work from any destination</p>
-    <a href="" class="btn btn-outline-light" style="margin-left:10%;">View More</a>
+    
   </div>
 </div>
     </div>
@@ -157,21 +159,22 @@
         <div class="container my-4">
             <div class="row my-2">
                 <div class="col-md-12">
-                    <h3 class="text-center fw-bold">Blogs</h3>
+                    <h3 class="text-center fw-bold">Local Attractions</h3>
                 </div>
             </div>
             <div class="row">
             <?php 
-                if(!empty($index_blog)){
-                    foreach($index_blog_result as $row){    
+                if(!empty($local_attraction_result)){
+                    foreach($local_attraction_result as $row){    
             ?>
             <div class="col-md-6">
             <figure class="figure">
             <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded" alt="...">
             <h5><?php echo $row['title']; ?></h5>
             <p>
-            <?php echo $row['description']; ?>
+            <?php echo substr($row['description'],0,200)."..."; ?>
             </p>
+            <a href="local_attraction_moredetail.php?id=<?php echo $row['id'];?>" class="btn btn-success">Read More</a>
             </figure>
             </div>
             
@@ -228,7 +231,7 @@
                 <div class="col-md-4">
                     <p>
                        <?php
-                       echo $row['text'];
+                       echo $row['description'];
                        ?> 
                     </p>
                     <figcaption>

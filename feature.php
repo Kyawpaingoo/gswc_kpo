@@ -16,17 +16,6 @@
     <section>
         <div class="container">
             <div class="row py-3">
-                <div class="col-md-12 text-center">
-                    <h2 class="py-2">Welcome to Our Campsite</h2>
-                    <p class="lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut laboriosam alias exercitationem dolore quasi blanditiis ex nulla natus voluptatibus molestias, deleniti sunt corrupti, suscipit adipisci minus quia illum illo!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row py-3">
                 <div class="col-md-12">
                     <h2 class="text-center">Camp Infrastructure</h2>
                 </div>
@@ -72,7 +61,7 @@
                 <div class="col-md-6">
                     <img src="images/<?php echo $row['image']; ?>" class="img-fluid w-100" alt="">
                 </div>
-                <div class="col-md-6 pt-3 lh-lg">
+                <div class="col-md-6 pt-3 lh-lg bg-light bg-gardient">
                     <h4 class="fw-bold"><?php echo $row['title']; ?></h4>
                     <figcaption><?php echo $row['short_desc']; ?> <div class="vr"></div> <?php echo $row['short_desc2']; ?> Person <div class="vr">
                     </figcaption>
@@ -106,7 +95,8 @@
                 <figure class="figure">
                 <img src="images/wildswim.jpg" class="figure-img img-fluid rounded" alt="...">
                 <h4 class="fs-3 fw-bold">Book your dream vacation now</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, repellendus non dolor labore quis porro minus voluptatum sunt eligendi ratione inventore omnis laborum vero perspiciatis, iusto veniam eaque quas cum!</p>
+                <p>Book your dream vacation now at our camping site and experience the beauty and tranquility of the great outdoors. We offer a variety of camping options and easy online booking. Don't wait, reserve your spot and start planning your ultimate outdoor adventure.
+                </p>
                 <a href="" class="text-dark text-end text-decoration-none hvr-forward">Book Now
                 <i class="fa-solid fa-arrow-right"></i></a> 
                 </figure>
@@ -115,8 +105,8 @@
                 <div class="col-md-6">
                 <figure class="figure">
                 <img src="images/ankur-khandelwal-nfUNBJtLHWI-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
-                <h4 class="fs-3 fw-bold">Book your dream vacation now</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, repellendus non dolor labore quis porro minus voluptatum sunt eligendi ratione inventore omnis laborum vero perspiciatis, iusto veniam eaque quas cum!</p>
+                <h4 class="fs-3 fw-bold">Wake up in your own paradise</h4>
+                <p>Wake up in your own paradise at our camping site. Experience serene surroundings, fresh air and natural beauty that will make your vacation unforgettable. Book now and start planning your dream outdoor getaway.</p>
                 <a href="" class="text-dark text-end text-decoration-none hvr-forward">Book Now
                 <i class="fa-solid fa-arrow-right"></i></a> 
                 </figure>
@@ -139,32 +129,25 @@
                     <th scope="col">Campsite</th>
                     <th scope="col">Person</th>
                     <th scope="col">Price</th>
+                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <?php
+                        if(!empty($campsite_result)){
+                            foreach($campsite_result as $row){
+                    ?>
+                    <th scope="row"><?php echo $row['id']; ?></th>
+                    <td><?php echo $row['title']; ?></td>
+                    <td><?php echo $row['short_desc2']; ?> persons</td>
+                    <td><?php echo $row['price']; ?></td>
+                    <td><a href="#" class="btn btn-success">Book Now!</a> </td>
                     </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
-                    
+                    <?php
+                              }
+                        }
+                    ?>
                    </tbody>
                 </table>
                 <div class="row">

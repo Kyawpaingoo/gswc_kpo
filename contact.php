@@ -11,15 +11,15 @@
                 <div class="col-md-6">
                     <h3 class="text-bold">Feel Free to write on gwscinfo@camp.com</h3>
                     <p class="pt-2 lh-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aliquam nemo. Delectus amet veritatis sapiente natus illo dolorem tempore voluptate, omnis maiores sit quam, facilis autem, laudantium eligendi assumenda ab.
+                    At our camping website, we are dedicated to providing excellent customer service. If you have any questions, concerns, or feedback, please don't hesitate to contact us through our website's contact form, by phone, or by email. We're here to make your camping experience as easy and enjoyable as possible. Thank you for choosing us.
                     </p>
 
                     <div class="row mt-4">
                     <h5 class="py-2">Contact</h5>
                     <ul class="list-unstyled lh-lg">
                         <li class="mb-2"><i class="fa-solid fa-location-dot"></i> : Via Venti Settembre, Ireland</li>
-                        <li class="mb-2"><i class="fa-solid fa-phone"></i> : 09-768045970</li>
-                        <li class="mb-2"><i class="fa-solid fa-envelope"></i> : paingookyaw624@gamil.com</li>
+                        <li class="mb-2"><i class="fa-solid fa-phone"></i> :  ( 01) 437 0969</li>
+                        <li class="mb-2"><i class="fa-solid fa-envelope"></i> : gwscinfo@gamil.com</li>
                     </ul>
                     </div>
 
@@ -37,7 +37,7 @@
 
                     <div class="col-md-6">
                         <h3 class="text-bold">How can we help?</h3>
-                        <p class="pt-2 lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti adipisci, eligendi inventore et maiores, mollitia, tempore consequatur veniam assumenda earum corporis voluptatum.</p>
+                        <p class="pt-2 lh-lg">We're here to help you plan the perfect camping trip. Whether you need gear advice, help finding a campsite, or assistance with reservations, our team is here for you. Contact us with any questions.</p>
 
                         <div class="row mt-4">
                         <div class="mb-3">
@@ -80,7 +80,11 @@
             </div>
             <div class="col-md-6 ">
                 <h4 class="fw-bold fs-2">Direction to Our Office</h4>
-                <p class="lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis dolores ipsum alias ipsa ullam obcaecati nisi voluptas repellendus cumque possimus consectetur exercitationem voluptatibus error corrupti, quia, accusantium iure commodi!</p>
+                <p class="lh-lg">Welcome to our camping website! If you're looking to visit our office in person, we're located at  Via Venti Settembre, Ireland.</p>
+                <p>If you're using a GPS device, simply enter our address and it will guide you to our location. If you have any trouble finding us, please give us a call at [insert phone  ( 01) 437 0969 and we'll be happy to assist you.</p>
+                <p>
+                Once you arrive, you'll find plenty of parking available for our customers. Our office hours are 9:00 AM to 5:00 PM, so please stop by during these times if you'd like to speak with someone in person.
+                </p>
                 <p>Email: gwscinfo@email.con</p>
             </div>
         </div>

@@ -69,7 +69,7 @@
                     <p>
                     <?php echo substr($local_row['description'],0,200); ?>
                     </p>
-                    <a href="#" class="btn btn-success">Read More</a>
+                    <a href="local_attraction_detail.php?id=<?php echo $local_row['id']; ?>" class="btn btn-success">Read More</a>
                 </div>
                 <?php 
                      }
@@ -88,7 +88,7 @@
                        
                 ?>
                 <div class="col-md-4 my-3">
-                <div class="card" style="width: 18rem;">
+                <div class="card" >
                         <img src="images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
@@ -96,7 +96,7 @@
 
                             <?php echo substr($row['description'],0,200); ?>
                             </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="local_attraction_moredetail.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Read More</a>
                         </div>
                         </div>
                 </div>
