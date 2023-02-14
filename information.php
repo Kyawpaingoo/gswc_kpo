@@ -1,19 +1,8 @@
 <?php
     require_once('header.php');
     require_once('db/dbconfig.php');
-    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC");
-    $pdo_statement->execute();
-    $result = $pdo_statement->fetchAll();
 
-    $info_figure = $pdo_conn->prepare("SELECT * FROM information_figure  ORDER BY  information_figure.id ASC");
-    $info_figure->execute();
-    $info_figure_result =  $info_figure->fetchAll();
-
-    $info_gallery = $pdo_conn->prepare("SELECT * FROM info_gallery  ORDER BY  info_gallery.id ASC");
-    $info_gallery->execute();
-    $info_gallery_result =  $info_gallery->fetchAll();
-
-    $info_local= $pdo_conn->prepare("SELECT * FROM info_local  ORDER BY  info_local.id ASC");
+    $info_local= $pdo_conn->prepare("SELECT * FROM local_attraction  ORDER BY  local_attraction.id ASC LIMIt 3");
     $info_local->execute();
     $info_local_result =  $info_local->fetchAll();
 ?>
@@ -57,33 +46,65 @@
     </section>
 
     <section>
-        <div class="container ms-auto me-auto">
+        <div class="container my-4">
         <div class="row my-2">
                 <h2 class="text-center">Service</h2>
             </div>
-            <div class="row mt-4">
-                <?php
-                if(!empty($result)){
-                    foreach($result as $row){
-
-                   
-                ?>
-                <div class="col-md-4"><h5><img src="images/<?php echo $row['image']; ?>" width="50px" height="50px" alt="">   <?php echo $row['title']; ?></h5>
-                <p>
-                    <?php
-                    echo $row['description'];
-                    ?>
-                </p>
+            <div class="row my-4">          
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/parking.svg" width="50px" height="50px" alt="">   
+                    Parking in the camp</h5>
+                    <p>
+                    We have large arear for car parking 24/7. You can pick up your car to our campsite
+                    </p>
                 </div>
-                
-                <?php
-                 }
-                }
-                ?>
-            </div>  
-                        
-            
-            <hr class="divider mt-5">
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/caravan.svg" width="50px" height="50px" alt="">   
+                    Motorhome</h5>
+                    <p>
+                    You can rent motorhome service at our campsite for your family trip
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/washing-machine.svg" width="50px" height="50px" alt="">   
+                    Washing Machines</h5>
+                    <p>
+                    We also provide laundry service at our campsite. You can wish your clothes there
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/shower.svg" width="50px" height="50px" alt="">   
+                    Sanitary Facilities</h5>
+                    <p>
+                    Not only motorhome service. We provide sanitary facilities for our valued customers.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/wifi.svg" width="50px" height="50px" alt="">   
+                    Hight Speed Wifi</h5>
+                    <p>
+                    We install high speed wifi internet service for our customers in all of our campsite.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/electric-_1_.svg" width="50px" height="50px" alt="">   
+                    Electricity </h5>
+                    <p>
+                    To cook your food with electric oven, We also provide electricity in our campsite 24/7
+                    </p>
+                </div>
+            </div>    
         </div>
     </section>
 
@@ -113,25 +134,36 @@
 
     <section class="my-4">
         <div class="container">
-            <div class="row py-4">
-                <?php
-                if(!empty($info_figure)){
-                    foreach($info_figure_result as $row){
-
-                ?>
+            <div class="row py-4">              
                 <div class="col-md-4">
                     <figure class="figure">
-                    <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded h-50" alt="...">
+                    <img src="images/motorhome.jpg" class="figure-img img-fluid rounded h-50" alt="...">
                     <figcaption class="figure-caption text-align">
-                    <?php echo $row['description']; ?>
+                    Motorhome rental provides an opportunity for individuals and families to experience the freedom 
+                    and adventure of traveling in a recreational vehicle without the commitment of owning one.
                     </figcaption>
                     </figure>
                 </div>
-                <?php
 
-                    }
-                }
-                ?>
+                <div class="col-md-4">
+                    <figure class="figure">
+                    <img src="images/pitch2.jpg" class="figure-img img-fluid rounded h-50" alt="...">
+                    <figcaption class="figure-caption text-align">
+                    Camping with a tent provides a traditional and more rustic camping experience,
+                    where one can connect with nature and enjoy the great outdoors.
+                    </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-md-4">
+                    <figure class="figure">
+                    <img src="images/campfire.jpg" class="figure-img img-fluid rounded h-50" alt="...">
+                    <figcaption class="figure-caption text-align">
+                    Campfire is a traditional and iconic part of camping, providing warmth, light and a gathering place for telling stories,
+                    roasting marshmallows and creating memories.
+                    </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
     </section>
@@ -139,27 +171,38 @@
     <section class="my-4">
         <div class="container">
             <div class="row my-4">
-            <?php
-                if(!empty($info_gallery)){
-                    foreach($info_gallery_result as $row){
-
-                ?>
                 <div class="col-md-4 my-2">
-                    <img src="images/<?php echo $row['image']; ?>" class="img-fluid rounded" alt="">
+                    <img src="images/gallerry1.jpg" class="img-fluid rounded" alt="">
                 </div>
-                <?php
-                        }   
-                    }
-                ?>
+
+                <div class="col-md-4 my-2">
+                    <img src="images/pitch2.jpg" class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-4 my-2">
+                    <img src="images/gallery3.jpg" class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-4 my-2">
+                    <img src="images/gallery4.jpg" class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-4 my-2">
+                    <img src="images/gallery5.jpg" class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-4 my-2">
+                    <img src="images/gallery6.jpg" class="img-fluid rounded" alt="">
+                </div>
         </div>
     </section>
 
     <section class="my-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="350px" height="350px" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="col-md-6 pt-4 ps-4">
+                <div class="col-md-6 pt-4 ps-2">
                     <div class="row">
                     <div class="col-md-6"><h5><img src="images/deer.svg" width="50px" height="50px" alt=""> Wild Life</h5>
                     <p>You can relax at our campsite and see the beauty of nature and wildlife.</p>
@@ -198,7 +241,7 @@
                     </div>   
                     </div>
                 </div>   
-                <div class="col-md-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="350px" height="350px" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>  
             </div>
             <hr class="divider mt-5">

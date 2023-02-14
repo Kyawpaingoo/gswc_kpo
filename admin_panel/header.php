@@ -9,45 +9,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="../js/script.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="https://kit.fontawesome.com/a64b1fca43.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
 </head>
 
 <body>
-  <header>
+
     <!-- place navbar here -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <div class="container">
-            <a class="navbar-brand text-success" href="#"><img src="../images/logoipsum-225.svg" alt="" width="45px" height="45px">
-            Admin</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Dashboard </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.php">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.php">Products</a>
-                    </li>
-                </ul>
-                <div class="navbar nav">
-                <?php
-                if(!empty($_SESSION['name'])){
+   <div class="container-fluid">
+      <div class="row">
+    <nav class="col-2 bg-dark">
+          <h1 class="h-4 py-3 text-center fw-bold">
+          <img src="../images/dashboard-logo.svg" alt="" width="45px" height="45px">
+            <span class="d-none d-lg-inline text-light">Admin Dashboard</span>
+          </h1>
+
+          <hr class="divider text-white my-0">
+
+          <li class="nav-item">
+            <a href="dashboard.php" class="nav-link text-light"><i class="bi bi-table fs-5 pe-2"></i>
+              Dashboard</a>
+          </li>
+
+          <hr class="divider text-white my-3">
+
+          <div class="side-heading text-white">
+            Interface
+          </div>
+
+          <li class="nav-item">
+            <a href="campsite/campsite.php" class="nav-link text-light"><i class="bi bi-card-list fs-5 pe-2"></i>
+              Campsite</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="product/product.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+              Products</a>
+          </li>
+    </nav>
+
+        <main class="col-10">
+        <nav class="navbar navbar-expand-lg navbar-white bg-white">
+            <div class="flex-fill"></div>
+
+            <div class="navbar nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link position-relative"><i class="bi bi-envelope-fill text-dark fs-4"></i>
+                <span class="badge rounded-pill bg-danger badge-counter">
+                  3+
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link position-relative"><i class="bi bi-bell-fill text-dark fs-4"></i>
+                <span class="badge rounded-pill bg-danger badge-counter">
+                  7
+                </span>
+              </a>
+            </li>
+            
+        <?php
+                if(!empty($_SESSION['email'])){
                     
                 ?>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-circle-user"></i> <?php echo  $_SESSION['name'];?>
+                    <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user fs-4"></i> <?php echo  $_SESSION['name'];?>
                     </a>
 
                     <ul class="dropdown-menu">
@@ -65,19 +95,17 @@
                 } else{
                     
                 ?>
-                <a href="../login.php" class="nav-link">
-                    <?php echo  "Login";?>
+                <a href="../login.php" class="btn btn-outline-secondary">
+                    <?php echo  "Sign In";?>
                     </a>
                 <?php
                 }
                 ?>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-gear"></i></a>
+             <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="text-dark bi bi-gear-fill fs-4"></i></a>
                 </li>
             </div>
-            </div>
-      </div>
-    </nav>
+          </nav>
+        
     
-  </header>
+ 

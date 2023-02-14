@@ -11,9 +11,14 @@ include('db/dbconfig.php');
 	$result = $pdo_statement->fetchAll();
     if(!empty($result)) { 
         $_SESSION['name'] = $result[0]['name'];
-        $_SESSION['email'] = $result[0]['email'];
-        header('location:admin_panel/dashboard.php');
-    }else{
+        $_SESSION['email'] = $result[0]['email']; 
+        if($result[0]['type'] == 0){
+            header('location:admin_panel/dashboard.php');
+        }else{
+            header('location:index.php');
+        }
+    } 
+    else{
         header('location:login.php?msg=error');
     }
 ?>

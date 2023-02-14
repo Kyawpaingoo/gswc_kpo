@@ -1,9 +1,6 @@
 <?php 
     require_once('header.php');
     require_once('db/dbconfig.php');
-    $pdo_statement = $pdo_conn->prepare("SELECT service. * FROM service ORDER BY  service.id ASC");
-    $pdo_statement->execute();
-    $result = $pdo_statement->fetchAll();
 
     $campsite = $pdo_conn->prepare("SELECT campsite. * FROM campsite ORDER BY  campsite.id ASC");
     $campsite->execute();
@@ -14,34 +11,90 @@
     </section>
 
     <section>
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-12">
-                    <h2 class="text-center">Camp Infrastructure</h2>
+        <div class="container my-4">
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <img src="images/erik-mclean-R_O76DHewdw-unsplash.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">Enjoy your journey at our campsite</h3>
+                    <p class="lh-lg">We welcome you to our campsite, where you can embark on a memorable journey filled with adventure, relaxation and nature. Our campsite offers a peaceful and serene environment, surrounded by beautiful landscapes, perfect for those looking to escape the hustle and bustle of daily life. Whether you're a seasoned camper or a first-timer, our facilities and amenities cater to your every need, making your stay with us comfortable and enjoyable. We encourage you to explore the surrounding area, participate in our outdoor activities and make unforgettable memories. Come, relax and enjoy your journey at our campsite.</p>
                 </div>
             </div>
-            <div class="row mt-4">
-            <div class="row mt-4">
-                <?php
-                if(!empty($result)){
-                    foreach($result as $row){
 
-                   
-                ?>
-                <div class="col-md-4"><h5><img src="images/<?php echo $row['image']; ?>" width="50px" height="50px" alt="">   <?php echo $row['title']; ?></h5>
-                <p>
-                    <?php
-                    echo $row['description'];
-                    ?>
-                </p>
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <h3 class="fw-bold">Relax your soul in the river</h3>
+                    <p class="lh-lg">Take a break from the stresses of daily life and come relax your soul in the calming waters of the river. The tranquil sound of the flowing water, surrounded by lush greenery, creates a peaceful and serene atmosphere that soothes the mind and rejuvenates the spirit. Take a dip in the cool waters or simply bask in the sun on the riverbank, allowing yourself to fully unwind and forget about your worries. Let the river wash away your tensions and leave you feeling refreshed and invigorated. Come and let the river soothe your soul.</p>
                 </div>
-                
-                <?php
-                 }
-                }
-                ?>
-            </div>  
-            
+
+                <div class="col-md-6">
+                    <img src="images/laura-chouette-bD4j1V52dx0-unsplash.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container my-4">
+        <div class="row my-2">
+                <h2 class="text-center">Service</h2>
+            </div>
+            <div class="row my-4">          
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/parking.svg" width="50px" height="50px" alt="">   
+                    Parking in the camp</h5>
+                    <p>
+                    We have large arear for car parking 24/7. You can pick up your car to our campsite
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/caravan.svg" width="50px" height="50px" alt="">   
+                    Motorhome</h5>
+                    <p>
+                    You can rent motorhome service at our campsite for your family trip
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/washing-machine.svg" width="50px" height="50px" alt="">   
+                    Washing Machines</h5>
+                    <p>
+                    We also provide laundry service at our campsite. You can wish your clothes there
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/shower.svg" width="50px" height="50px" alt="">   
+                    Sanitary Facilities</h5>
+                    <p>
+                    Not only motorhome service. We provide sanitary facilities for our valued customers.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/wifi.svg" width="50px" height="50px" alt="">   
+                    Hight Speed Wifi</h5>
+                    <p>
+                    We install high speed wifi internet service for our customers in all of our campsite.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/electric-_1_.svg" width="50px" height="50px" alt="">   
+                    Electricity </h5>
+                    <p>
+                    To cook your food with electric oven, We also provide electricity in our campsite 24/7
+                    </p>
+                </div>
+            </div>    
         </div>
     </section>
 
@@ -62,11 +115,11 @@
                     <img src="images/<?php echo $row['image']; ?>" class="img-fluid w-100" alt="">
                 </div>
                 <div class="col-md-6 pt-3 lh-lg bg-light bg-gardient">
-                    <h4 class="fw-bold"><?php echo $row['title']; ?></h4>
-                    <figcaption><?php echo $row['short_desc']; ?> <div class="vr"></div> <?php echo $row['short_desc2']; ?> Person <div class="vr">
+                    <h4 class="fw-bold"><?php echo $row['name']; ?></h4>
+                    <figcaption><?php echo $row['zone']; ?> <div class="vr"></div> <?php echo $row['guest']; ?> Person <div class="vr">
                     </figcaption>
                     <p class="lh-lg">
-                    <?php echo substr($row['long_desc'],0,200); ?>
+                    <?php echo substr($row['description'],0,200); ?>
                     </p>
                     <p class="font-monospace">
                     <img src="images/parking.svg"  width="35px" height="35px" alt="">
@@ -97,8 +150,6 @@
                 <h4 class="fs-3 fw-bold">Book your dream vacation now</h4>
                 <p>Book your dream vacation now at our camping site and experience the beauty and tranquility of the great outdoors. We offer a variety of camping options and easy online booking. Don't wait, reserve your spot and start planning your ultimate outdoor adventure.
                 </p>
-                <a href="" class="text-dark text-end text-decoration-none hvr-forward">Book Now
-                <i class="fa-solid fa-arrow-right"></i></a> 
                 </figure>
                 </div>
 
@@ -106,9 +157,7 @@
                 <figure class="figure">
                 <img src="images/ankur-khandelwal-nfUNBJtLHWI-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
                 <h4 class="fs-3 fw-bold">Wake up in your own paradise</h4>
-                <p>Wake up in your own paradise at our camping site. Experience serene surroundings, fresh air and natural beauty that will make your vacation unforgettable. Book now and start planning your dream outdoor getaway.</p>
-                <a href="" class="text-dark text-end text-decoration-none hvr-forward">Book Now
-                <i class="fa-solid fa-arrow-right"></i></a> 
+                <p>Wake up in your own paradise at our camping site. Experience serene surroundings, fresh air and natural beauty that will make your vacation unforgettable. Book now and start planning your dream outdoor getaway.</p>        
                 </figure>
                 </div>
             </div>
@@ -139,8 +188,8 @@
                             foreach($campsite_result as $row){
                     ?>
                     <th scope="row"><?php echo $row['id']; ?></th>
-                    <td><?php echo $row['title']; ?></td>
-                    <td><?php echo $row['short_desc2']; ?> persons</td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['guest']; ?> persons</td>
                     <td><?php echo $row['price']; ?></td>
                     <td><a href="#" class="btn btn-success">Book Now!</a> </td>
                     </tr>

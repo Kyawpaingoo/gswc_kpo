@@ -2,7 +2,7 @@
     require_once('header.php');
     require_once('db/dbconfig.php');
     $id = $_GET['id'];
-    $tent= $pdo_conn->prepare("SELECT * FROM tent WHERE id='".$id."'");
+    $tent= $pdo_conn->prepare("SELECT * FROM product WHERE id='".$id."'");
     $tent->execute();
     $tent_result =  $tent->fetchAll();
 ?>
