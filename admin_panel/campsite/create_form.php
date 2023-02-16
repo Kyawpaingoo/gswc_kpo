@@ -5,9 +5,8 @@
     $campsite->execute();
     $campsite_result = $campsite->fetchAll();
 ?>
-<link rel="stylesheet" href="../../css/bootstrap.css">
-<link rel="stylesheet" href="../../css/style.css">
-<div class="container-fluid dashboard-bg">
+
+<div class="container-fluid dashboard-bg f-400">
     <div class="contianer py-4">
         <div class="row">
             <div class="col-md-12">

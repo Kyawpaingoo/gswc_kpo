@@ -6,7 +6,7 @@
     </section>
     
     <section>
-        <div class="container">
+        <div class="container fw-400">
             <div class="row mt-4">
                 <div class="col-md-6">
                     <h3 class="text-bold">Feel Free to write on gwscinfo@camp.com</h3>

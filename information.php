@@ -6,13 +6,13 @@
     $info_local->execute();
     $info_local_result =  $info_local->fetchAll();
 ?>
-    <section class="header">
+    <section class="header f-400">
         <div class="container-fluid">
             <h1 class="text-center py-5">Information</h1>
         </div>
     </section>
 
-    <section class="my-5 me-4">
+    <section class="my-5 me-4 f-400">
         <div class="container text-start">
        
              <div class="row g-4">
@@ -45,10 +45,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container my-4">
         <div class="row my-2">
-                <h2 class="text-center">Service</h2>
+                <h2 class="text-center fw-bold">Service</h2>
             </div>
             <div class="row my-4">          
                 <div class="col-md-4 text-center">
@@ -108,7 +108,7 @@
         </div>
     </section>
 
-    <section class="my-4 me-4">
+    <section class="my-4 me-4 f-400">
         <div class="container text-end">
        
              <div class="row g-4 py-4">
@@ -132,7 +132,7 @@
         </div>
     </section>
 
-    <section class="my-4">
+    <section class="my-4 f-400">
         <div class="container">
             <div class="row py-4">              
                 <div class="col-md-4">
@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <section class="my-4">
+    <section class="my-4 f-400">
         <div class="container">
             <div class="row my-4">
                 <div class="col-md-4 my-2">
@@ -197,10 +197,10 @@
         </div>
     </section>
 
-    <section class="my-4">
+    <section class="my-4 f-400">
         <div class="container">
             <div class="row">
-                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-md-6 pt-4 ps-2">
                     <div class="row">
@@ -241,7 +241,7 @@
                     </div>   
                     </div>
                 </div>   
-                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0; max-width: 480px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19795.845625414477!2d96.1185981511977!3d17.04150494588119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19976cf791c21%3A0xf840acae908abb4e!2sHlawga%20National%20Park%20Mode!5e0!3m2!1sen!2smm!4v1673501728234!5m2!1sen!2smm" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>  
             </div>
             <hr class="divider mt-5">
@@ -249,10 +249,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container">
             <div class="row">
-                <h2 class="text-center">Local Attractions</h2>
+                <h2 class="text-center fw-bold">Local Attractions</h2>
             </div>
             <div class="row mt-4 mb-2">
                 <?php 

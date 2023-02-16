@@ -9,9 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     
 </head>
 
@@ -40,13 +40,23 @@
           </div>
 
           <li class="nav-item">
-            <a href="../campsite/campsite" class="nav-link text-light"><i class="bi bi-card-list fs-5 pe-2"></i>
+            <a href="../campsite/campsite.php" class="nav-link text-light"><i class="bi bi-card-list fs-5 pe-2"></i>
               Campsite</a>
           </li>
 
           <li class="nav-item">
             <a href="product.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
               Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../review/review.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+              Review</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../booking/booking.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+              Booking</a>
           </li>
     </nav>
 

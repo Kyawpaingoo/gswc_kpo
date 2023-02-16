@@ -9,27 +9,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     
 </head>
 
 <body>
 
     <!-- place navbar here -->
-   <div class="container-fluid f-700">
+   <div class="container-fluid">
       <div class="row">
     <nav class="col-2 bg-dark">
           <h1 class="h-4 py-3 text-center fw-bold">
-          <img src="../images/dashboard-logo.svg" alt="" width="45px" height="45px">
+          <img src="../../images/dashboard-logo.svg" alt="" width="45px" height="45px">
             <span class="d-none d-lg-inline text-light">Admin Dashboard</span>
           </h1>
 
           <hr class="divider text-white my-0">
 
           <li class="nav-item">
-            <a href="dashboard.php" class="nav-link text-light"><i class="bi bi-table fs-5 pe-2"></i>
+            <a href="../dashboard.php" class="nav-link text-light"><i class="bi bi-table fs-5 pe-2"></i>
               Dashboard</a>
           </li>
 
@@ -40,22 +40,22 @@
           </div>
 
           <li class="nav-item">
-            <a href="campsite/campsite.php" class="nav-link text-light"><i class="bi bi-card-list fs-5 pe-2"></i>
+            <a href="../campsite/campsite.php" class="nav-link text-light"><i class="bi bi-card-list fs-5 pe-2"></i>
               Campsite</a>
           </li>
 
           <li class="nav-item">
-            <a href="product/product.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+            <a href="../product/product.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
               Products</a>
           </li>
 
           <li class="nav-item">
-            <a href="review/review.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+            <a href="../review/review.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
               Review</a>
           </li>
 
           <li class="nav-item">
-            <a href="booking/booking.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+            <a href="booking.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
               Booking</a>
           </li>
     </nav>
@@ -96,7 +96,7 @@
                         </li>
     
                         <li>
-                            <a href="../logout.php" class="dropdown-item">Logout</a>
+                            <a href="../../logout.php" class="dropdown-item">Logout</a>
                         </li>
                     </ul>
 
@@ -105,7 +105,7 @@
                 } else{
                     
                 ?>
-                <a href="../login.php" class="btn btn-outline-secondary">
+                <a href="../../register.php" class="btn btn-outline-secondary">
                     <?php echo  "Sign In";?>
                     </a>
                 <?php

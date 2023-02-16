@@ -1,7 +1,7 @@
             </main>
         </div>
     </div>
- <footer class="bg-dark">
+ <footer class="bg-dark f-400">
  <section class="pt-3">
      <div class="container-fluid me-0">
         <div class="row justify-content-between">

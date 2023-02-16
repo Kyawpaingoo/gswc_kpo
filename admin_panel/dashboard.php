@@ -7,7 +7,7 @@ session_start();
     $user->execute();
     $user_result = $user->fetchAll();
 ?>
-    <div class="container-fluid dashboard-bg">
+    <div class="container-fluid dashboard-bg f-400">
     <div class="container">
     <div class="row flex-column flex-lg-row py-4">
             <h2 class="h6 text text-white-50">QUICK STATS</h2>
@@ -83,7 +83,7 @@ session_start();
                 </div>
             
 
-        <table class="table table-bordered ">      
+        <table class="table table-bordered table-responsive ">      
             <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
@@ -91,7 +91,6 @@ session_start();
             <th scope="col">Password</th>
             <th scope="col">Age</th>
             <th scope="col">Country</th>
-            <th scope="col">Start Date</th>
             <th scope="col">Role</th>
             <th scope="col">Action</th>
             </tr>
@@ -107,10 +106,9 @@ session_start();
             <td><?php echo $user_row['pass']; ?></td>
             <td><?php echo $user_row['age']; ?></td>
             <td><?php echo $user_row['country']; ?></td>
-            <td><?php echo $user_row['startdate']; ?></td>
             <td><?php echo $user_row['role']; ?></td>
-            <td><a href="#" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+            <td><a href="edit.php?id=<?php echo $user_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+            <a href="delete.php?id=<?php echo $user_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
             </td>    
             </tr>  
             <?php                  

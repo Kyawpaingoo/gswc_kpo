@@ -24,12 +24,12 @@
         <?php
             }
         ?>
-        <div class="row">
+        <div class="row f-700">
             <div class="col-md-4 mx-auto">
                 <h3 class="fw-bold text-success">Login Account</h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row f-400">
             <div class="col-md-4 mx-auto ">
                 <form method="post" action="logincheck.php">
                     <div class="mb-3">

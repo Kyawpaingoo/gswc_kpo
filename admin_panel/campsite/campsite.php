@@ -6,15 +6,15 @@
     $campsite = $pdo_conn->prepare("SELECT * FROM campsite ORDER BY  campsite.id ASC ");
     $campsite->execute();
     $campsite_result = $campsite->fetchAll();
+
 ?>
 
 
-<div class="container-fluid dashboard-bg">
-        <div class="contianer">
+<div class="container-fluid dashboard-bg py-4 ">
+        <div class="contianer bg-white my-4 p-4">
             <div class="row py-4">
                 <div class="col-md-2">
-                    <h2>Products</h2>
-                    
+                    <h2>Campsite</h2>
                 </div>
 
                 <div class="col-md-7">
@@ -38,6 +38,7 @@
                     <th scope="col" class="py-3">ID</th>
                     <th scope="col" class="py-3">Name</th>                  
                     <th scope="col" class="py-3">Zone</th>
+                    <th scope="col" class="py-3">Description</th>
                     <th scope="col" class="py-3">Guest</th>
                     <th scope="col" class="py-3">Price</th>
                     <th scope="col" class="py-3">Action</th>
@@ -52,10 +53,10 @@
                     <td><?php echo $campsite_row['id']; ?></td>
                     <td><?php echo $campsite_row['name']; ?></td>           
                     <td><?php echo $campsite_row['zone']; ?></td>
+                    <td style="max-width: 200px;"><?php echo $campsite_row['description']; ?></td>
                     <td><?php echo $campsite_row['guest']; ?></td>
                     <td><?php echo $campsite_row['price']; ?></td>
                     <td>
-                    <a href="#" class="btn btn-success"><i class="bi bi-search"></i> View</a>
                     <a href="edit.php?id=<?php echo $campsite_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
                     <a href="delete.php?id=<?php echo $campsite_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a></td>
                 </tr>

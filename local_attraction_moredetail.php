@@ -7,7 +7,7 @@
     $local_main_result =  $local_main->fetchAll();
 
 ?>
-    <div class="container">
+    <div class="container f-400">
         <div class="row my-4">
             <?php
                 if(!empty($local_main_result)){

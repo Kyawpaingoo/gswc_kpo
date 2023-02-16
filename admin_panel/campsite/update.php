@@ -12,5 +12,5 @@
     $campsite ="UPDATE campsite SET image=:image, name =:name, description=:description, zone=:zone, price=:price, guest=:guest WHERE id=".$id;
     $campsite = $pdo_conn->prepare($campsite);
     $campsite->execute(array(':image'=>$image, ':name'=>$name,':description'=>$description,':zone'=>$zone,':price'=>$price,':guest'=>$guest));
-    header('location:service.php');
+    header('location:campsite.php');
 ?>

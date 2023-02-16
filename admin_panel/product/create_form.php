@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="../../css/bootstrap.css">
 <link rel="stylesheet" href="../../css/style.css">
 <div class="container-fluid dashboard-bg">
-    <div class="contianer py-4">
+    <div class="contianer my-4 py-4">
         <div class="row">
-            <div class="col-md-12">
-                <h3 class="fw-bold text-center">Create New Product</h3>
+            <div class="col-md-6 bg-white mx-auto">
+                <h3 class="fw-bold">Create New Product</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-6 bg-white mx-auto">
                 <form action="create.php" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>

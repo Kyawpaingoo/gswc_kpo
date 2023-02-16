@@ -1,6 +1,10 @@
 <?php
     require_once('header.php');
     require_once('db/dbconfig.php');
+    $msg = "";
+    if(isset($_GET['msg'])){
+        $msg = $_GET['msg'];
+    }
 
     $tent = $pdo_conn->prepare("SELECT  * FROM product WHERE category_id = '1' ORDER BY  product.id ASC");
     $tent->execute();
@@ -15,55 +19,31 @@
     $camper_result = $camper->fetchAll();
 ?>
    
-    <section class="pitchtype_header bg-secondary">
+    <section class="pitchtype_header bg-secondary f-400">
         <h1 class="text-center py-5">
         Pitch Type and Availability
         </h1>    
-    </section>
-
-    <div class="container my-4">
-    <form class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-12">
-            <label class="visually py-1" for="inlineFormInputGroupUsername"><i class="bi bi-calendar3"></i>Check In</label>
-            <div class="input-group">
-            <input type="datetime" class="form-control" id="inlineFormInputGroupUsername">
-            </div>
-        </div>
-        <div class="col-12">
-            <label class="visually py-1" for="inlineFormInputGroupUsername"><i class="bi bi-calendar3"></i>Check Out</label>
-            <div class="input-group">
-            <input type="datetime" class="form-control" id="inlineFormInputGroupUsername">
-            </div>
-        </div>
-        <div class="col-12">
-            <label class="visually py-1" for="inlineFormInputGroupUsername"><i class="bi bi-person"></i>Guest Number</label>
-            <div class="input-group">
-            <input type="number" class="form-control" id="inlineFormInputGroupUsername">
-            </div>
-        </div>
-        
-
-        <div class="col-12">
-            <label class="py-1" for="inlineFormSelectPref">Campsite Zone</label>
-            <select class="form-select" id="inlineFormSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            </select>
-        </div>
-
-        <div class="col-12 pt-4">
-            <button type="submit" class="btn btn-success">Check Availability</button>
-        </div>
-        </form>
-    </div>
-
-    <section>
+    </section>    
+    <section class="f-400">
         <div class="container my-3">
+        <?php
+            if($msg == "error")
+                {
+        ?>
+            <div class="row">
+                <div class="col-md-4 mx-auto mt-2">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Please Login your account.</strong>
+                        <a href="login.php" class="bnt text-decoration-none f-300 btn btn-sm">Login Here!</a>
+                    </div>
+                </div>
+            </div>
+        <?php
+                }
+        ?>
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">Pitch Rental Service</h3>
+                    <h3 class="text-center fw-bold">Pitch Rental Service</h3>
                 </div>
             </div>
             <div class="row my-4 py-4">
@@ -87,16 +67,14 @@
                 <hr class="divider">
                 <div class="row">
                     <div class="col-md-6">
-                    <a href="pitchdetail.php?id=<?php echo $tent_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
+                    <a href="order.php?id=<?php  echo $tent_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
                     <i class="fa-solid fa-arrow-right"></i></a>  
                     </div>
                     <div class="col-md-6">
                     <a href="pitchdetail.php?id=<?php echo $tent_row['id']; ?>" class="text-dark text-end text-decoration-none hvr-forward ps-3">View More Details
                     <i class="fa-solid fa-arrow-right"></i> 
                     </a> 
-                    </div> 
-                             
-                    
+                    </div>            
                     </div>     
                 </figure>
                 </div>
@@ -109,11 +87,11 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
     <div class="container my-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">Motorhomes Rental Service</h3>
+                    <h3 class="text-center fw-bold">Motorhomes Rental Service</h3>
                 </div>
             </div>
             <div class="row my-4 py-4">
@@ -135,11 +113,11 @@
                 <hr class="divider">
                 <div class="row">
                 <div class="col-md-6">
-                    <a href="motorhomedetail.php?id=<?php echo $motorhome_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
+                    <a href="order.php?id=<?php  echo $tent_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
                     <i class="fa-solid fa-arrow-right"></i></a>  
                 </div>
                 <div class="col-md-6">
-                    <a href="motorhomedetail.php?id=<?php echo $motorhome_row['id']; ?>" class="text-dark text-end text-decoration-none hvr-forward ps-3">View More Details
+                    <a href="pitchdetail.php?id=<?php echo $motorhome_row['id']; ?>" class="text-dark text-end text-decoration-none hvr-forward ps-3">View More Details
                     <i class="fa-solid fa-arrow-right"></i> 
                     </a> 
                 </div> 
@@ -155,11 +133,11 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
     <div class="container my-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">Camper Rental Service</h3>
+                    <h3 class="text-center fw-bold">Camper Rental Service</h3>
                 </div>
             </div>
             <div class="row my-4 py-4">
@@ -181,11 +159,11 @@
                 <hr class="divider">
                 <div class="row">
                 <div class="col-md-6">
-                    <a href="camperhomedetail.php?id=<?php echo $camper_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
+                    <a href="order.php?id=<?php  echo $tent_row['id']; ?>" class="text-success text-decoration-none hvr-forward ">Rent Now
                     <i class="fa-solid fa-arrow-right"></i></a>  
                     </div>
                     <div class="col-md-6">
-                    <a href="camperhomedetail.php?id=<?php echo $camper_row['id']; ?>" class="text-dark text-end text-decoration-none hvr-forward ps-3">View More Details
+                    <a href="order.php?id=<?php echo $camper_row['id']; ?>" class="text-dark text-end text-decoration-none hvr-forward ps-3">View More Details
                     <i class="fa-solid fa-arrow-right"></i> 
                     </a> 
                     </div> 

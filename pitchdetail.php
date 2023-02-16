@@ -2,22 +2,22 @@
     require_once('header.php');
     require_once('db/dbconfig.php');
     $id = $_GET['id'];
-    $tent= $pdo_conn->prepare("SELECT * FROM product WHERE id='".$id."'");
-    $tent->execute();
-    $tent_result =  $tent->fetchAll();
+    $product= $pdo_conn->prepare("SELECT * FROM product WHERE id='".$id."'");
+    $product->execute();
+    $product_result =  $product->fetchAll();
 ?>
-    <div class="container">
+    <div class="container f-400">
         <div class="row my-4">
             <?php
-                if(!empty($tent_result)){
-                    foreach($tent_result as $tent_row){
+                if(!empty($product_result)){
+                    foreach($product_result as $product_row){
 
             ?>
             <div class="col-md-6">
             <figure class="figure">
-                <img src="images/<?php echo $tent_row['image'];?>" class="figure-img img-fluid rounded" alt="...">
-                <figcaption class="figure-caption">Price: <?php echo $tent_row['price']; ?> <br></figcaption>
-                <figcaption class="figure-caption">In Stock: <?php echo $tent_row['stock']; ?> <br></figcaption>
+                <img src="images/<?php echo $product_row['image'];?>" class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption">Price: <?php echo $product_row['price']; ?> <br></figcaption>
+                <figcaption class="figure-caption">In Stock: <?php echo $product_row['stock']; ?> <br></figcaption>
                 </figure>
                 <div class="row">
                     <div class="col">
@@ -31,8 +31,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h4><?php echo $tent_row['name']; ?></h4>
-                <p><?php echo $tent_row['description']; ?></p>
+                <h4><?php echo $product_row['name']; ?></h4>
+                <p><?php echo $product_row['description']; ?></p>
                 <a href="#" class="btn btn-success">Rent Now!</a>
                 <a href="pitchtype.php" class="btn btn-success">Go Back</a>
             </div>

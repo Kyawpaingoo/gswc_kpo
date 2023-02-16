@@ -18,7 +18,7 @@
 <body>
 
     <!-- place navbar here -->
-   <div class="container-fluid">
+   <div class="container-fluid f-400">
       <div class="row">
     <nav class="col-2 bg-dark">
           <h1 class="h-4 py-3 text-center fw-bold">
@@ -47,6 +47,16 @@
           <li class="nav-item">
             <a href="../product/product.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
               Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../review/review.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+              Review</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../booking/booking.php" class="nav-link text-light"><i class="bi bi-bag-fill fs-5 pe-2"></i>
+              Booking</a>
           </li>
     </nav>
 

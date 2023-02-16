@@ -10,8 +10,7 @@
     $local_attraction ->execute();
     $local_attraction_result =$local_attraction ->fetchAll();
 ?>  
-    <!-- //carousel -->
-    <Section>
+    <Section class="f-400">
     <div id="carouselExampleAutoplaying" class="carousel slide h-50" data-bs-ride="carousel">
         
   <div class="carousel-inner">
@@ -54,14 +53,14 @@
     </Section>
 
     <!-- //welcome -->
-    <section class="Welcome py-4">
+    <section class="Welcome py-4 f-400">
         <div class="container">
-            <h1 class="text-center">Welcome to Global Wild Swimming <br> and Camping</h1>
+            <h1 class="text-center fw-bold">Welcome to Global Wild Swimming <br> and Camping</h1>
             <p class="text-center mx-auto lh-lg">Welcome to our camping service site! We offer a variety of camping options for all types of outdoor enthusiasts. From secluded tent sites to RV hookups and cabin rentals, we have something for everyone. Our campgrounds are located in some of the most beautiful and scenic areas in the country, providing the perfect setting for a peaceful and relaxing getaway. Whether you're looking for a weekend getaway or an extended vacation, we have the perfect spot for you. Come and explore the great outdoors with us!</p>
         </div>  
     </section>
        
-    <section>
+    <section class="f-400">
         <div class="container my-4 mx-auto">    
             <div class="row">
                 <h3 class="text-center">Camp Infrastructure</h3>
@@ -89,7 +88,7 @@
         </div>
     </section>
     
-    <section class="welcome2">
+    <section class="welcome2 f-400">
         <div class="container my-4">
         <div class="row">
             <div class="col-md-7">
@@ -124,7 +123,7 @@
     </section>
 
 
-    <section>
+    <section class="f-400">
         <div class="container my-4">
             <div class="row my-2">
                 <div class="col-md-12">
@@ -139,7 +138,7 @@
             <div class="col-md-6">
             <figure class="figure">
             <img src="images/<?php echo $row['image']; ?>" class="figure-img img-fluid rounded" alt="...">
-            <h5><?php echo $row['title']; ?></h5>
+            <h5 class="fw-bold"><?php echo $row['title']; ?></h5>
             <p>
             <?php echo substr($row['description'],0,200)."..."; ?>
             </p>
@@ -159,10 +158,10 @@
     </section>
 
 
-    <section>
+    <section class="f-400">
         <div class="container my-4">
         <div class="row my-2">
-                <h2 class="text-center">Service</h2>
+                <h2 class="text-center fw-bold">Service</h2>
             </div>
             <div class="row my-4">          
                 <div class="col-md-4 text-center">
@@ -222,10 +221,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container my-4 Review">
             <div class="row text-center pt-4">
-                <h1>Review </h1>
+                <h1 class="fw-bold">Review </h1>
             </div>
             <div class="row">
                 <?php
@@ -258,7 +257,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
     <div class="container my-4">     
         <div class="row">
         <div class="col-md-6">
@@ -266,7 +265,7 @@
         </div>
         <div class="col-md-6">
         <div class="card-body">
-            <h5 class="card-title">We are Here!</h5>
+            <h3 class="card-title fw-bold">We are Here!</h5>
             <div class="row mt-2">
                     <h5 class="py-2">Contact</h5>
                     <ul class="list-unstyled lh-lg">

@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary f-700">
     <div class="container">
         <a class="navbar-brand text-success" href="#">
             <img src="images/logoipsum-225.svg" alt="" width="45px" height="45px">

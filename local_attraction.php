@@ -6,7 +6,7 @@
     $local_main->execute();
     $local_main_result =  $local_main->fetchAll();
 ?>
-    <section class="local_header">
+    <section class="local_header f-400">
         <div class="container">
         <h1 class="fs-2 fw-bold">
        Connect with Nature
@@ -17,7 +17,7 @@
    
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container my-4 mx-auto">    
             <div class="row">
                 <h3 class="text-center">Camp Infrastructure</h3>
@@ -44,7 +44,8 @@
             </div>    
         </div>
     </section>
-    <section>
+
+    <section class="f-400">
         <div class="container">
             <div class="row my-4">
                 <div class="col-md-6">
@@ -94,7 +95,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container">
             <div class="row my-4">
                 <?php
@@ -124,7 +125,7 @@
     </section>
 
 
-    <section class="welcome2 my-4">
+    <section class="welcome2 my-4 f-400">
         <div class="container">
         <h1 class="fs-1 fw-bold text-start ps-5 pt-3 lh-lg">Start booking at our website <br> to relax your mind</h1>
             

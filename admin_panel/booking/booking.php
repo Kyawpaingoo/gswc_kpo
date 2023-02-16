@@ -1,19 +1,18 @@
-<?php
-session_start();
+<?php 
+    session_start();
     require_once('header.php');
     require_once('../../db/dbconfig.php');
 
-    $product = $pdo_conn->prepare("SELECT * FROM product ORDER BY  product.id ASC ");
-    $product->execute();
-    $product_result = $product->fetchAll();
-
+    $product_order = $pdo_conn->prepare("SELECT * FROM product_order ORDER BY  product_order.id ASC ");
+    $product_order->execute();
+    $product_order_result = $product_order->fetchAll();
 ?>
-    <div class="container-fluid dashboard-bg py-4 ">
+
+<div class="container-fluid dashboard-bg py-4 ">
         <div class="contianer bg-white my-4 p-4">
             <div class="row py-4">
                 <div class="col-md-2">
-                    <h2>Products</h2>
-                    
+                    <h2>Activity</h2>      
                 </div>
 
                 <div class="col-md-7">
@@ -33,31 +32,29 @@ session_start();
             <div class="row">
             <table class="table table-striped">
                 <tr>
-                    <th scope="col" class="py-3">Image</th>
                     <th scope="col" class="py-3">ID</th>
                     <th scope="col" class="py-3">Name</th>                  
-                    <th scope="col" class="py-3">Category</th>
-                    <th scope="col" class="py-3">Description</th>
-                    <th scope="col" class="py-3">Price</th>
-                    <th scope="col" class="py-3">Stock</th>
+                    <th scope="col" class="py-3">Email</th>
+                    <th scope="col" class="py-3">City</th>
+                    <th scope="col" class="py-3">Country</th>
+                    <th scope="col" class="py-3">Qunatity</th>
                     <th scope="col" class="py-3">Action</th>
                 </tr>
 
                 <?php
-                if(!empty($product_result)){
-                    foreach($product_result as $product_row){
+                if(!empty($product_order_result)){
+                    foreach($product_order_result as $product_order_row){
                 ?>
                 <tr>
-                    <td><img src="../../images/<?php echo $product_row['image']; ?>" class="img-fluid" width="100px" height="100px"></td>
-                    <td><?php echo $product_row['id']; ?></td>
-                    <td><?php echo $product_row['name']; ?></td>           
-                    <td><?php echo $product_row['category_id']; ?></td>
-                    <td style="max-width: 200px;"><?php echo $product_row['description']; ?></td>
-                    <td><?php echo $product_row['price']; ?></td>
-                    <td><?php echo $product_row['stock']; ?></td>
+                    <td><?php echo $product_order_row['id']; ?></td>
+                    <td><?php echo $product_order_row['name']; ?></td>           
+                    <td><?php echo $product_order_row['email']; ?></td>           
+                    <td><?php echo $product_order_row['city']; ?></td>
+                    <td><?php echo $product_order_row['country']; ?></td>
+                    <td><?php echo $product_order_row['quantity']; ?></td>
                     <td>
-                    <a href="edit.php?id=<?php echo $product_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-                    <a href="delete.php?id=<?php echo $product_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a></td>
+                    <a href="edit.php?id=<?php echo $product_order_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+                    <a href="delete.php?id=<?php echo $product_order_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a></td>
                 </tr>
                 <?php                  
                         }
@@ -67,6 +64,7 @@ session_start();
             </div>
         </div>
     </div>
+   
 <?php
     require_once('footer.php');
 ?>

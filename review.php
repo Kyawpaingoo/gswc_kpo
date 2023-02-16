@@ -6,16 +6,16 @@
     $camp_review->execute();
     $camp_review_result = $camp_review->fetchAll();
 ?>
-    <section class="review_header bg-secondary">
+    <section class="review_header bg-secondary f-400">
         <h1 class="text-center py-5">
         Review Post
         </h1>    
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container my-4 Review">
-            <div class="row text-center pt-4">
-                <h1>Review </h1>
+            <div class="row text-center  pt-4">
+                <h1 class="fw-bold">Review </h1>
             </div>
             <div class="row">
                 <?php
@@ -48,11 +48,11 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container">
-        <div class="row">
-            <div class="col-md-6 align-center">
-                <form action="create.php" method="POST">
+        <div class="row my-4">
+            <div class="col-md-6 mx-auto">
+                <form action="create_review.php" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" placeholder="Name" name="name">

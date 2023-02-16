@@ -6,11 +6,74 @@
     $campsite->execute();
     $campsite_result = $campsite->fetchAll();
 ?>
-    <section class="feature-header bg-secondary">
-                    <h1 class="text-center py-5">Our Features</h1>
+    <section class="feature-header bg-secondary f-400">
+        <h1 class="text-center py-5">Our Features</h1>
     </section>
 
-    <section>
+    <section class="f-400">
+        <div class="container my-4">
+        <div class="row my-2">
+                <h2 class="text-center">Activities</h2>
+            </div>
+            <div class="row my-4">          
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/kayaking.svg" width="50px" height="50px" alt="">   
+                    Canoeing</h5>
+                    <p>
+                    You can enjoy rowing boat in the river and have fun
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/tent-_1_.svg" width="50px" height="50px" alt="">   
+                    Campfire</h5>
+                    <p>
+                    You can relax at our campsite and see the beauty of nature and wildlife.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/fisherman.svg" width="50px" height="50px" alt="">   
+                    Fishing</h5>
+                    <p>
+                    You can relax and enjoy fishing at our campsite.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/swimming.svg" width="50px" height="50px" alt="">   
+                    Swimming</h5>
+                    <p>
+                    You can enjoying swimming in the river and relax at our campsite
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/hiking.svg" width="50px" height="50px" alt="">   
+                    Hiking</h5>
+                    <p>
+                    You can also hike mountain and burn your energy
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>
+                    <img src="images/bicycle.svg" width="50px" height="50px" alt="">   
+                    Cycling </h5>
+                    <p>
+                    You can ride bicycle at our campsite and enjoy your jounery.
+                    </p>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <section class="f-400">
         <div class="container my-4">
             <div class="row py-4">
                 <div class="col-md-6">
@@ -35,7 +98,7 @@
         </div>
     </section>
     
-    <section>
+    <section class="f-400">
         <div class="container my-4">
         <div class="row my-2">
                 <h2 class="text-center">Service</h2>
@@ -98,7 +161,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container py-3 ">
             <div class="row py-3">
                 <div class="col-md-12">
@@ -141,7 +204,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container">
             <div class="row py-3">
                 <div class="col-md-6">
@@ -164,7 +227,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="f-400">
         <div class="container py-3">
         <div class="row py-3">
             <h3 class="fw-bold">Campsite Price List</h3>

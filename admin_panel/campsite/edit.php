@@ -1,4 +1,5 @@
 <?php
+    require_once('header.php'); 
     require_once('../../db/dbconfig.php');
     $id = $_GET['id'];
 
@@ -7,22 +8,12 @@
     $campsite->execute();
     $campsite_result = $campsite->fetchAll();
 
-    // var_dump($dataset);
+    var_dump($campsite_result);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous'/>
-</head>
-<body>
-<div class="container">
+<div class="container f-400 my-4 dashboard-bg py-4">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mx-auto bg-white py-4">
 
             <?php
                 foreach($campsite_result as $campsite_row){
@@ -69,5 +60,6 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+<?php
+    require_once('footer.php');
+?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 14, 2023 at 04:34 PM
+-- Generation Time: Feb 16, 2023 at 05:12 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -42,10 +42,10 @@ CREATE TABLE `campsite` (
 --
 
 INSERT INTO `campsite` (`id`, `image`, `name`, `zone`, `guest`, `description`, `price`) VALUES
-(1, 'campsite.jpg', '\"The Riverside Retreat', 'Zone A', '1-6', 'This camping site is located on the banks of a serene and peaceful river. The site is surrounded by lush green forests and offers a tranquil and secluded atmosphere. There are plenty of spots for tents and RVs, as well as designated fire pits and picnic tables. The river is perfect for fishing and swimming, and the nearby trails are great for hiking and bird watching. The Riverside Retreat is an ideal spot for those looking for a peaceful getaway in nature.', '$500'),
-(2, 'campsite2.jpg', 'Mountain Vista', 'Zone B', '1-8', 'This camping site is situated high in the mountains, offering panoramic views of the surrounding landscape. The site is surrounded by well-maintained hiking and biking trails, perfect for outdoor enthusiasts. The campground has amenities such as fire pit, picnic tables and clean facilities. The cool mountain air and the serenity of the forest make it an ideal spot for those looking to escape the hustle and bustle of the city and reconnect with nature', '$800'),
-(3, 'campsite3.jpg', 'Sandy Shores', 'Zone C', '1-4', 'This camping site is located right on the beach, providing campers with direct access to the water. The site has designated spots for tents and RVs, as well as picnic tables, fire pits and clean facilities. The nearby beach is perfect for swimming, boating, and fishing, and the sunsets are absolutely breathtaking. The Sandy Shores is the perfect spot for a beach vacation with family and friends.', '$700'),
-(4, 'campsite4.jpg', 'The Ponderosa', 'Zone D', '1-10', 'This camping site is situated in a dense forest of tall pine trees, providing a true wilderness experience. The site has designated spots for tents and RVs, as well as picnic tables, fire pits and clean facilities. There is a nearby lake for fishing, and the forest is home to a variety of wildlife, including deer, foxes, and birds. The Ponderosa is the perfect spot for nature lovers looking to escape the hustle and bustle of city life and immerse themselves in the beauty of the natural world.\r\n\r\n\r\n\r\n\r\n', '$1500');
+(1, 'campsite.jpg', 'The Riverside Retreat', 'Zone A', '6', 'This camping site is located on the banks of a serene and peaceful river. The site is surrounded by lush green forests and offers a tranquil and secluded atmosphere. There are plenty of spots for tents and RVs, as well as designated fire pits and picnic tables. The river is perfect for fishing and swimming, and the nearby trails are great for hiking and bird watching. The Riverside Retreat is an ideal spot for those looking for a peaceful getaway in nature.', '500'),
+(2, 'campsite2.jpg', 'Mountain Vista', 'Zone B', '8', 'This camping site is situated high in the mountains, offering panoramic views of the surrounding landscape. The site is surrounded by well-maintained hiking and biking trails, perfect for outdoor enthusiasts. The campground has amenities such as fire pit, picnic tables and clean facilities. The cool mountain air and the serenity of the forest make it an ideal spot for those looking to escape the hustle and bustle of the city and reconnect with nature', '800'),
+(3, 'campsite3.jpg', 'Sandy Shores', 'Zone C', '4', 'This camping site is located right on the beach, providing campers with direct access to the water. The site has designated spots for tents and RVs, as well as picnic tables, fire pits and clean facilities. The nearby beach is perfect for swimming, boating, and fishing, and the sunsets are absolutely breathtaking. The Sandy Shores is the perfect spot for a beach vacation with family and friends.', '700'),
+(4, 'campsite4.jpg', 'The Ponderosa', 'Zone D', '10', '                                        This camping site is situated in a dense forest of tall pine trees, providing a true wilderness experience. The site has designated spots for tents and RVs, as well as picnic tables, fire pits and clean facilities. There is a nearby lake for fishing, and the forest is home to a variety of wildlife, including deer, foxes, and birds. The Ponderosa is the perfect spot for nature lovers looking to escape the hustle and bustle of city life and immerse themselves in the beauty of the natural world.\r\n\r\n\r\n\r\n\r\n\"\r\n                    \"\r\n                    ', '1500');
 
 -- --------------------------------------------------------
 
@@ -113,19 +113,47 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `image`, `name`, `description`, `price`, `stock`, `category_id`) VALUES
-(1, 'dome_tent.jpg', 'Dome Tent', '                                        Dome tents consist of two poles which cross over each other to make the tent structure.  The ends of the poles go into the tent’s floor (or ground sheet).  This creates a free-standing structure which doesn’t need guylines or stakes to stay up.  A waterproof layer can go on top of this. They are very easy and quick to set up.\r\n\r\nThe dome shape of the tent means wind can move over the tent easily.  Water will also fall off the tent instead of pooling on the top, so dome tents are great for bad weather.  Dome tents come in all sizes but larger dome tents don’t do as well in bad weather though.\r\n\r\nThe downside of the dome shape is that the walls are curved.  Thus, the ceiling height will be low in many parts of the tent.\r\n\"\r\n                    \"\r\n                    ', 200, 15, 2),
-(2, 'extra_dome_tent4.jpg', 'Extended Dome Tent', 'Extended dome tents use the criss-crossing pole design but they also have a curved pole (or poles) which extend off to the size.  This pole is often used to create a vestibule space in front of the tent.\r\n\r\nTwo curved poles can also be added to each side of the dome to create a larger tent or even additional rooms.  The extended area is slanted though, so doesn’t give much extra interior space with headroom.\r\n\r\nThe curved pole does need to be staked down, so the tent is only semi-freestanding.  However, it is still fairly easy to set up.  The design gives you much more space and versatility while still maintaining the benefits of a sturdy dome design.', 800, 19, 1),
-(3, 'tunnel_tent3.jpg', 'Tunnel Tent', 'Tunnel tents are made up of two or more curved poles connected by the tent fabric.  The pole design creates a tunnel which has consistent overhead height.  Some tunnel tents have large storage areas in the middle with multiple rooms off to the side.\r\n\r\nIn theory, there is no limit to how many poles a tunnel tent can have, so they come in many different sizes.  However, the design doesn’t usually make sense for more than 6 people.  With 6, you can have a patio in the middle and 3 people sleeping on each side. For more campers than this, you’d have to cram people into the end of the tunnel, meaning they would have to crawl over the other campers to get in/out.\r\n\r\nAssembling tunnel tents is usually pretty easy.  However, they are not freestanding and must be staked out.  This makes tunnel tents a bad choice for rocky ground or sandy soil.  You also have to be careful not to trip on the many guylines.\r\n\r\nIt’s important to pay attention to wind direction when setting up a tunnel tent.  If the wind hits the tunnel straight-on, it can easily cause the tunnel to blow away.   Thus, tunnel tents aren’t recommended for windy weather.', 1200, 9, 1),
-(4, 'cabin_tent.jpg', 'Cabin Tent', 'These tents have vertical or near vertical walls, so they resemble a cabin when set up. The vertical walls mean the interior of the tent is very spacious and you have lots of headroom.  They are great for people who don’t want to hunch over in the tent or want to use a cot bed inside the tent\r\n\r\nCabin tents come in various sizes, including sizes for large families and groups.   They sometimes have room dividers or even multiple rooms.\r\n\r\nThe downside of cabin tents is that they are very big and bulky.  The huge footprint means you can’t pitch them just anywhere.  Pitching can be a pain too and usually requires multiple people. They aren’t freestanding and have to be carefully staked out with guylines.  You’ll probably need to bring a hammer to ensure the guylines are secure.\r\n\r\nCabin tents are also not great against high winds.  Because most cabin tents are just one-layer, condensation can build up inside the tent and drip water on you while you sleep.  Because of these issues, cabin tents are mostly recommended for mild weather camping.', 800, 5, 1),
-(5, 'rooftop_tent.jpg', 'Rooftop Tent', 'Rooftop tents are installed on top of your vehicle.  Depending on the type, you unfold, inflate, or pop-up the tent when you want to use it.  You use a ladder to climb into the tent.\r\n\r\nWhile mounting the tent to your car can be a pain, pitching rooftop tents is generally quick and easy.  You don’t have to worry about uneven ground or staking out the tent.   You can camp anywhere that you can park your vehicle.\r\n\r\nRooftop tents aren’t for everyone though.  Small children or uneasy sleepers can fall out of rooftop tents.  They perform poorly in wind.  You’ve got to empty the tent and fold it away if you want to drive anywhere.  Most rooftop tents are also pretty pricy.', 1500, 18, 1),
-(6, 'frame_tent.jpg', 'Ridge Tent', 'These are the tent design that you might see in cowboy movies.  The construction involves at least two poles to support the front and back of the tent.  These poles are often connected by a center ridgeline pole.   The design means you have slanted walls. While more spacious than a pyramid tent, you still don’t get much headroom.\r\n\r\nRidge tents are usually one-layer so condensation often occurs. They are somewhat difficult to pitch and sagging walls are almost inevitable. This means that rain or snow will pool on tent walls.  Most basic designs don’t handle wind very well either.\r\n\r\nBecause of all of these issues, A-frame tents are rarely used anymore.  The exception is with ultralight backpackers who use A-frame designs for tarp shelters.  There are also some ultralight trekking pole tents which use the A-frame design.', 1000, 12, 1),
-(7, 'classA.jpg', 'Class A Motorhome Service', 'A diesel motorhomes or diesel pushers. These RVs are constructed on a specially-designed motor vehicle chassis. The large diesel engine on this motorhome is located in the rear of the coach, and it provides more torque compared to its gas-powered counterpart. The location of the engine also helps provide a quiet and smooth ride. The diesel engine essentially pushes the motorhome down the road. Diesel motorhomes are the epitome of luxury RVs, which makes them great for long trips and cross-country adventures. In many instances, they are the perfect RV for the full-time RVer. The diesel engine usually lasts longer and is more durable than the gas engine on other Class As but that makes them more expensive, too.', 2000, 10, 2),
-(8, 'classAGas.jpg', 'Class A Gas Motorhome Service', 'lass A gas motorhomes offer many of the comforts of home. This makes them a popular choice for full-time or long-term RVers. You’ll often find residential-style appliances (from refrigerators and microwaves to washer and dryers), master bathrooms, high-quality electronics, and designer furniture in this type of RV. Most also have multiple slideouts or full-length slideouts for added space. They also have plenty of storage compartments for personal belongings needed for extended travel. Both types of Class A motorhomes resemble a bus, roughly 30 to 40 feet in length, with a vertical front windshield with large windows.', 1500, 4, 2),
-(9, 'classC.jpg', 'Class C Motorhome Service', 'A smaller type of motorhome, Class C motorhomes are usually built on a truck chassis. Gas and diesel options are available. Some well-known manufacturers of Class C engines include Chevy, Ford, and Mercedes Benz. Class C RVs have a distinctive “cab-over” profile that makes them easy to recognize (and provides an extra bed or storage space). Many Class C motorhomes offer similar amenities to their Class A counterparts, like kitchens, bathrooms, and slideouts, just on a smaller scale. Their shorter chassis also means these RVs can go places where larger RVs won’t fit, like some state park campsites. Numerous Class C floorplans are available, making this type of RV perfect for anyone that loves remote exploring and camping – especially families and couples who travel with friends.', 800, 10, 2),
-(10, 'camper1.jpg', 'Fifth Wheel Campers', 'The largest type of towable RV, fifth wheel campers, are pulled by large pick-up trucks with a special fifth wheel hitch located in the bed of the truck. Because of this hitch, they have a raised forward section where you’ll typically find a bedroom or living room. Fifth wheels are some of the most spacious RVs available thanks to their extended length and slideouts. Some floorplans have up to six slideouts! This makes them a great option for large families or those who want to camp with big groups. Many fifth wheel RVers will park their RV at a campground and detach the towing vehicle for daily travel. As with any towable RV, it’s critical that the towing vehicle is rated to handle the weight of the RV plus its contents.', 3000, 6, 3),
-(11, 'camper2.jpg', 'Toy Haulers', 'Toy haulers (sometimes called sport utility RVs) are built to accommodate tons of gear and outdoor toys. Motorcycles, dirt bikes, golf carts, four wheelers, snowmobiles, kayaks, and more – you name it, these RVs will haul it. Designed with a large cargo area/garage, toy haulers have special heavy-duty doors that double as ramps for loading gear. Unlike the previous types of RV that we’ve described, toy haulers are a sub-category of RVs. Toy haulers are available in towable and motorized RV types, but most toy hauler RVs are fifth wheels. The combination of comfortable living space and a garage make these the perfect basecamp for active RVers who want to play hard wherever they travel.', 2500, 4, 3),
-(12, 'camper3.jpg', 'Travel Trailers', ' This popular type of RV is towed by a bumper hitch or a frame hitch that extends from the front of the trailer. Travel trailers are ideal for any type of camper because lots of floor plans and styles are available. In fact, their weights can vary greatly – from less than 4,000 lbs to over 10,000 lbs. You can also find travel trailers that have multiple slideouts for increased living areas. Travel trailers are easier to detach and setup in a campground than fifth wheels. They provide the freedom of having a vehicle to enjoy their destination and a complete home unit wherever they travel. This makes travel trailers a favorite type of RV for many.', 1600, 2, 3),
-(13, 'camper4.jpg', 'Teardrop Campers / Tiny Trailers', '. Teardrop trailers are ideal for weekend travelers who want basic amenities when they travel. The simplest teardrop RVs are just a bedroom on wheels. Larger floorplans can contain a bed, kitchen/dining area, and wet bath. Like Class B motorhomes, teardrop RVs utilize swivel toilets, folding sinks, convertible beds, and more to make the small floorplan highly functional. Teardrop enthusiasts love the clever design and vintage aesthetic of these trailers, and they gather at rallies like Tearstock with other teardrop owners. It’s very common for these RVers to decorate their tiny trailers with retro fabrics and vintage trimmings. These RVs typically weigh less than 4,000 lbs. This type of RV is gaining popularity thanks to manufacturers, like Liberty Outdoors, who have promoted the tiny trailer movement.', 1200, 0, 3);
+(1, 'dome_tent.jpg', 'Dome Tent', 'Dome tents consist of two poles which cross over each other to make the tent structure.  The ends of the poles go into the tent’s floor (or ground sheet).  This creates a free-standing structure which doesn’t need guylines or stakes to stay up.  A waterproof layer can go on top of this. They are very easy and quick to set up.\r\n\r\n\r\n                    \"\r\n                    ', 200, 15, 2),
+(2, 'extra_dome_tent4.jpg', 'Extended Dome Tent', 'Extended dome tents use the criss-crossing pole design but they also have a curved pole (or poles) which extend off to the size.  This pole is often used to create a vestibule space in front of the tent.\r\n\r\n', 800, 19, 1),
+(3, 'tunnel_tent3.jpg', 'Tunnel Tent', 'Tunnel tents are made up of two or more curved poles connected by the tent fabric.  The pole design creates a tunnel which has consistent overhead height.  Some tunnel tents have large storage areas in the middle with multiple rooms off to the side.\r\n\r\n', 1200, 9, 1),
+(4, 'cabin_tent.jpg', 'Cabin Tent', 'These tents have vertical or near vertical walls, so they resemble a cabin when set up. The vertical walls mean the interior of the tent is very spacious and you have lots of headroom.  They are great for people who don’t want to hunch over in the tent or want to use a cot bed inside the tent\r\n\r\n', 800, 5, 1),
+(5, 'rooftop_tent.jpg', 'Rooftop Tent', 'Rooftop tents are installed on top of your vehicle.  Depending on the type, you unfold, inflate, or pop-up the tent when you want to use it.  You use a ladder to climb into the tent.\r\n\r\n', 1500, 18, 1),
+(6, 'frame_tent.jpg', 'Ridge Tent', 'These are the tent design that you might see in cowboy movies.  The construction involves at least two poles to support the front and back of the tent.  These poles are often connected by a center ridgeline pole.   The design means you have slanted walls. While more spacious than a pyramid tent, you still don’t get much headroom.\r\n\r\n', 1000, 12, 1),
+(7, 'classA.jpg', 'Class A Motorhome Service', 'A diesel motorhomes or diesel pushers. These RVs are constructed on a specially-designed motor vehicle chassis. The large diesel engine on this motorhome is located in the rear of the coach, and it provides more torque compared to its gas-powered counterpart. The location of the engine also helps provide a quiet and smooth ride. ', 2000, 10, 2),
+(8, 'classAGas.jpg', 'Class A Gas Motorhome Service', 'lass A gas motorhomes offer many of the comforts of home. This makes them a popular choice for full-time or long-term RVers. You’ll often find residential-style appliances (from refrigerators and microwaves to washer and dryers), master bathrooms, high-quality electronics, and designer furniture in this type of RV. ', 1500, 4, 2),
+(9, 'classC.jpg', 'Class C Motorhome Service', 'A smaller type of motorhome, Class C motorhomes are usually built on a truck chassis. Gas and diesel options are available. Some well-known manufacturers of Class C engines include Chevy, Ford, and Mercedes Benz. Class C RVs have a distinctive “cab-over” profile that makes them easy to recognize (and provides an extra bed or storage space). ', 800, 10, 2),
+(10, 'camper1.jpg', 'Fifth Wheel Campers', 'The largest type of towable RV, fifth wheel campers, are pulled by large pick-up trucks with a special fifth wheel hitch located in the bed of the truck. Because of this hitch, they have a raised forward section where you’ll typically find a bedroom or living room. Fifth wheels are some of the most spacious RVs available thanks to their extended length and slideouts. ', 3000, 6, 3),
+(11, 'camper2.jpg', 'Toy Haulers', 'Toy haulers (sometimes called sport utility RVs) are built to accommodate tons of gear and outdoor toys. Motorcycles, dirt bikes, golf carts, four wheelers, snowmobiles, kayaks, and more – you name it, these RVs will haul it. Designed with a large cargo area/garage, toy haulers have special heavy-duty doors that double as ramps for loading gear. Unlike the previous types of RV that we’ve described, toy haulers are a sub-category of RVs. ', 2500, 4, 3),
+(12, 'camper3.jpg', 'Travel Trailers', ' This popular type of RV is towed by a bumper hitch or a frame hitch that extends from the front of the trailer. Travel trailers are ideal for any type of camper because lots of floor plans and styles are available. In fact, their weights can vary greatly – from less than 4,000 lbs to over 10,000 lbs. You can also find travel trailers that have multiple slideouts for increased living areas. ', 1600, 2, 3),
+(13, 'camper4.jpg', 'Teardrop Campers / Tiny Trailers', '. Teardrop trailers are ideal for weekend travelers who want basic amenities when they travel. The simplest teardrop RVs are just a bedroom on wheels. Larger floorplans can contain a bed, kitchen/dining area, and wet bath. Like Class B motorhomes, teardrop RVs utilize swivel toilets, folding sinks, convertible beds, and more to make the small floorplan highly functional. ', 1200, 0, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_order`
+--
+
+CREATE TABLE `product_order` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `product` varchar(255) NOT NULL,
+  `quantity` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `product_order`
+--
+
+INSERT INTO `product_order` (`id`, `name`, `email`, `city`, `country`, `product`, `quantity`) VALUES
+(1, 'Kyaw Kyaw', 'kyawkyaw@gmail.com', 'Yagon', 'Myanmar ', 'Extended Dome Tent', 2),
+(7, 'Aung Aung', 'aungaung@gmail.com', 'Yagon', 'Myanmar ', 'Extended Dome Tent', 2),
+(8, 'Momo', 'momo@gmail.com', 'Kyoto', 'Japan', 'Ridge Tent', 3),
+(9, 'Mina', 'Mina@gmail.com', 'Kobe', 'Japan', 'Ridge Tent', 3),
+(10, 'Sana', 'Sana@gmail.com', 'Osaka', 'Japan', 'Ridge Tent', 3),
+(11, 'Nayoen', 'nayeon@gmail.com', 'Seoul', 'Korea', 'Ridge Tent', 3);
 
 -- --------------------------------------------------------
 
@@ -148,11 +176,10 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `name`, `email`, `description`, `city`, `country`, `star`) VALUES
-(1, 'Hirai Momo ', 'momo@gmail.com', '\"Camping is a great way to reconnect with nature and get away from the hustle and bustle of everyday life. Whether you\'re camping in a tent or an RV, the experience of being in the great outdoors is truly unique and enjoyable.\"The fresh air, beautiful scenery, and peaceful surroundings make for an unforgettable experience. ', 'Kyoto', 'Japan', 4),
+(1, 'Hirai Momo ', 'momo@gmail.com', '                    \"Camping is a great way to reconnect with nature and get away from the hustle and bustle of everyday life. Whether you\'re camping in a tent or an RV, the experience of being in the great outdoors is truly unique and enjoyable.\"The fresh air, beautiful scenery, and peaceful surroundings make for an unforgettable experience. \"\r\n                    ', 'Kyoto', 'Japan', 5),
 (2, 'Myoui Mina ', 'mina@gmail.com', '\"Camping at GWSC was an incredible experience. The campsite was well-maintained and had all the amenities we needed, including clean bathrooms and fire pits. The surrounding wilderness was breathtaking and provided ample opportunities for hiking and exploring. The staff was also friendly and helpful. We will definitely be back for another camping trip in the future.\"', 'Kobe', 'Japan', 3),
 (3, 'Kenvin Skywalker', 'kenvin@gmail.com', '\"I recently went on a camping trip and was disappointed with the overall experience. The campsite was overcrowded and lacked privacy. The bathrooms were dirty and not well-maintained. Additionally, there were no fire pits available, which made it difficult to cook and spend time around the campfire. I would not recommend this campsite to others and will not be returning in the future.\"', ' Yangon ', 'Myanmar', 2),
-(4, 'Mia Crown', 'miacrown@gmail.com', '\"Camping at GWSC was an incredible experience. The campsite was well-maintained and had all the amenities we needed, including clean bathrooms and fire pits. The surrounding wilderness was breathtaking and provided ample opportunities for hiking and exploring. The staff was also friendly and helpful. We will definitely be back for another camping trip in the future.\"', 'Yangon', 'Myanmar', 4),
-(5, 'Kyaw Paing Oo', 'kyawkyaw@gmail.com', '\"Camping is a great way to reconnect with nature and get away from the hustle and bustle of everyday life. Whether you\'re camping in a tent or an RV, the experience of being in the great outdoors is truly unique and enjoyable.\"The fresh air, beautiful scenery, and peaceful surroundings make for an unforgettable experience.', 'SanChaung', 'Myanmar', 3);
+(4, 'Mia Crown', 'miacrown@gmail.com', '\"Camping at GWSC was an incredible experience. The campsite was well-maintained and had all the amenities we needed, including clean bathrooms and fire pits. The surrounding wilderness was breathtaking and provided ample opportunities for hiking and exploring. The staff was also friendly and helpful. We will definitely be back for another camping trip in the future.\"', 'Yangon', 'Myanmar', 4);
 
 -- --------------------------------------------------------
 
@@ -167,7 +194,6 @@ CREATE TABLE `user` (
   `pass` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `age` int NOT NULL,
   `country` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `startdate` date NOT NULL,
   `role` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `type` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -176,11 +202,12 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `pass`, `age`, `country`, `startdate`, `role`, `type`) VALUES
-(1, 'Kyaw Paing Oo', 'admin@gmail.com', 'admin123456', 20, 'Myanmar', '2022-01-01', 'admin', 0),
-(2, 'Mia Crown', 'miacrow@gmail.com', 'mia123456', 21, 'Japan', '2022-02-07', 'user', 1),
-(3, 'Min Min', 'minmin@gmail.com', 'minmin123456', 22, 'Myanmar', '2022-10-14', 'user', 1),
-(4, 'James', 'james@gmail.com', 'james123456', 25, 'United Kingdom', '2023-01-20', 'user', 1);
+INSERT INTO `user` (`id`, `name`, `email`, `pass`, `age`, `country`, `role`, `type`) VALUES
+(1, 'Kyaw Paing Oo', 'admin@gmail.com', 'admin123456', 20, 'Myanmar', 'admin', 0),
+(2, 'Mia Crown', 'miacrow@gmail.com', 'mia123456', 21, 'Japan', 'user', 1),
+(3, 'Min Min', 'minmin@gmail.com', 'minmin123456', 22, 'Myanmar', 'user', 1),
+(5, 'Hirai Momo', 'momo@gmail.com', 'momo123456', 26, 'Japan', 'user', 1),
+(6, 'Myoui Mina', 'mina@gmail.com', 'mina123456', 26, 'Janpan', 'user', 1);
 
 --
 -- Indexes for dumped tables
@@ -210,6 +237,12 @@ ALTER TABLE `local_attraction`
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id fr` (`category_id`);
+
+--
+-- Indexes for table `product_order`
+--
+ALTER TABLE `product_order`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `review`
@@ -252,6 +285,12 @@ ALTER TABLE `product`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `product_order`
+--
+ALTER TABLE `product_order`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
@@ -261,7 +300,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
