@@ -19,6 +19,16 @@ include('db/dbconfig.php');
         }
     } 
     else{
+        if(!ISSET($_SESSION['attempt'])){
+            $_SESSION['attempt'] = 0;
+        }
+        
+        $_SESSION['attempt'] += 1;
+        
+        if($_SESSION['attempt'] === 3){
+            $_SESSION['msg'] = "Your Login is disabled";
+            header('location:index.php?msg=disabled');
+        }
         header('location:login.php?msg=error');
     }
 ?>

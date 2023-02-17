@@ -17,7 +17,7 @@ if(!empty($_SESSION['email'])){
 
             ?>
             <div class="col-md-6">
-                <img src="images/<?php echo $product_row['image']; ?>" alt="">
+                <img src="images/<?php echo $product_row['image']; ?>" class="img-fluid" alt="">
                 <h4><?php echo $product_row['name']; ?></h4>
                 <figcaption class="figure-caption">Price: <?php echo $product_row['price']; ?> <br></figcaption>
                 <figcaption class="figure-caption">In Stock: <?php echo $product_row['stock']; ?> <br></figcaption>

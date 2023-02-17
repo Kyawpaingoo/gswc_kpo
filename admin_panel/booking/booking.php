@@ -35,6 +35,7 @@
                     <th scope="col" class="py-3">ID</th>
                     <th scope="col" class="py-3">Name</th>                  
                     <th scope="col" class="py-3">Email</th>
+                    <th scope="col" class="py-3">Product</th>
                     <th scope="col" class="py-3">City</th>
                     <th scope="col" class="py-3">Country</th>
                     <th scope="col" class="py-3">Qunatity</th>
@@ -49,6 +50,7 @@
                     <td><?php echo $product_order_row['id']; ?></td>
                     <td><?php echo $product_order_row['name']; ?></td>           
                     <td><?php echo $product_order_row['email']; ?></td>           
+                    <td><?php echo $product_order_row['product']; ?></td>           
                     <td><?php echo $product_order_row['city']; ?></td>
                     <td><?php echo $product_order_row['country']; ?></td>
                     <td><?php echo $product_order_row['quantity']; ?></td>

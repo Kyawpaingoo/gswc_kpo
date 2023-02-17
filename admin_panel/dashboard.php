@@ -3,9 +3,23 @@ session_start();
     require_once('header.php');
     require_once('../db/dbconfig.php');
 
-    $user = $pdo_conn->prepare("SELECT * FROM user ORDER BY  user.id ASC ");
-    $user->execute();
-    $user_result = $user->fetchAll();
+    $searchErr = '';
+    $employee_details = '';
+    if(isset($_SESSION['save'])){
+        if(!empty($_POST['search'])){
+           $search = $_POST['search'];
+           $user_search = $pdo_conn->prepare("SELECT * FROM user where name like '$%search%' ORDER BY  user.id ASC "); 
+           $user_search->execute();
+           $employee_details = $user_search->fetchAll(PDO::FETCH_ASSOC);
+           print_r($employee_details);
+        } else{
+            $searchErr = "Please enter the information";
+        } 
+    }
+
+    // $user = $pdo_conn->prepare("SELECT * FROM user ORDER BY  user.id ASC ");
+    // $user->execute();
+    // $user_result = $user->fetchAll();
 ?>
     <div class="container-fluid dashboard-bg f-400">
     <div class="container">
@@ -67,9 +81,9 @@ session_start();
                 </div>
             
                 <div class="col-md-3">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" role="search" method="post">
+                    <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" name="save" type="submit">Search</button>
                 </form>
                 </div>
 
@@ -96,24 +110,42 @@ session_start();
             </tr>
 
             <?php
-                if(!empty($user_result)){
-                    foreach($user_result as $user_row){
+            if(!$employee_details){       
+                    //foreach($user_result as $user_row){
+            ?>
+            <!-- <tr>
+            <td><?php // echo $user_row['id']; ?></td>
+            <td><?php // echo $user_row['name']; ?></td>
+            <td><?php //echo $user_row['email']; ?></td>
+            <td><?php //echo $user_row['pass']; ?></td>
+            <td><?php //echo $user_row['age']; ?></td>
+            <td><?php //echo $user_row['country']; ?></td>
+            <td><?php //echo $user_row['role']; ?></td>
+            <td><a href="edit.php?id=<?php //echo $user_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+            <a href="delete.php?id=<?php //echo $user_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+            </td>    
+            </tr>   -->
+            <?php                  
+                    //}
+                
+            } else{
+                foreach($employee_details as $key=>$value){
             ?>
             <tr>
-            <td><?php echo $user_row['id']; ?></td>
-            <td><?php echo $user_row['name']; ?></td>
-            <td><?php echo $user_row['email']; ?></td>
-            <td><?php echo $user_row['pass']; ?></td>
-            <td><?php echo $user_row['age']; ?></td>
-            <td><?php echo $user_row['country']; ?></td>
-            <td><?php echo $user_row['role']; ?></td>
-            <td><a href="edit.php?id=<?php echo $user_row['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-            <a href="delete.php?id=<?php echo $user_row['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+            <td><?php echo $key+1; ?></td>
+            <td><?php echo $value['name']; ?></td>
+            <td><?php echo $value['email']; ?></td>
+            <td><?php echo $value['pass']; ?></td>
+            <td><?php echo $value['age']; ?></td>
+            <td><?php echo $value['country']; ?></td>
+            <td><?php echo $value['role']; ?></td>
+            <td><a href="edit.php?id=<?php echo $value['id'] ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+            <a href="delete.php?id=<?php echo $value['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
             </td>    
             </tr>  
-            <?php                  
-                    }
+            <?php
                 }
+            }
             ?>
         </table>   
         </div>
